@@ -1,0 +1,9 @@
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.dacpac
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.dll
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.pdb
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\ContosoUniversityData.dll
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\ContosoUniversityData.pdb
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\Model.xml
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\refactor.xml
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\postdeploy.sql
+c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\predeploy.sql
