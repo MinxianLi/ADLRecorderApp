@@ -163,3 +163,4 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.pdb
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.csprojResolveAssemblyReference.cache

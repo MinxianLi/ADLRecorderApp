@@ -11,6 +11,7 @@
         <AssociationConnector Association="ContosoUniversityDataModel.FK_dbo_Enrollment_dbo_Course_CourseID" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityDataModel.FK_dbo_Enrollment_dbo_Student_StudentID" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ContosoUniversityDataModel.Alert" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ContosoUniversityDataModel.Activity" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

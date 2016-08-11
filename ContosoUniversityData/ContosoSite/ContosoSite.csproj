@@ -203,6 +203,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AlertsController.cs" />
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -212,6 +213,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Activity.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Alert.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
@@ -339,6 +343,11 @@
     <Content Include="Views\Alerts\Details.cshtml" />
     <Content Include="Views\Alerts\Edit.cshtml" />
     <Content Include="Views\Alerts\Index.cshtml" />
+    <Content Include="Views\Activities\Create.cshtml" />
+    <Content Include="Views\Activities\Delete.cshtml" />
+    <Content Include="Views\Activities\Details.cshtml" />
+    <Content Include="Views\Activities\Edit.cshtml" />
+    <Content Include="Views\Activities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

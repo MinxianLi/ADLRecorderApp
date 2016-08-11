@@ -7,3 +7,8 @@ c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\Contoso
 c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\refactor.xml
 c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\postdeploy.sql
 c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoUniversityData\obj\Debug\predeploy.sql
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.dacpac
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoUniversityData\bin\Debug\ContosoUniversityData.pdb
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoUniversityData\obj\Debug\ContosoUniversityData.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoUniversityData\obj\Debug\ContosoUniversityData.pdb

@@ -63,6 +63,7 @@
     <Build Include="Course.sql" />
     <Build Include="Enrollment.sql" />
     <Build Include="Alert.sql" />
+    <Build Include="Activity.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />

@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "ContosoUniversityData"
 :setvar DefaultFilePrefix "ContosoUniversityData"
-:setvar DefaultDataPath "C:\Users\mli\AppData\Local\Microsoft\VisualStudio\SSDT\ContosoUniversityData"
-:setvar DefaultLogPath "C:\Users\mli\AppData\Local\Microsoft\VisualStudio\SSDT\ContosoUniversityData"
+:setvar DefaultDataPath "C:\Users\MinxianLi\AppData\Local\Microsoft\VisualStudio\SSDT\ContosoUniversityData"
+:setvar DefaultLogPath "C:\Users\MinxianLi\AppData\Local\Microsoft\VisualStudio\SSDT\ContosoUniversityData"
 
 GO
 :on error exit
@@ -102,6 +102,20 @@ ON Target.AlertId = Source.AlertId
 WHEN NOT MATCHED BY TARGET THEN
 INSERT (AlertMessage, CreateDate, ExpirationDate, Accepted, AcceptedDate)
 VALUES (AlertMessage, CreateDate, ExpirationDate, Accepted, AcceptedDate);
+
+
+
+
+MERGE INTO Activity AS Target
+USING (VALUES
+		(1, 'Chatting', '2016-08-09', 'Chat with Friend'),
+		(2, 'Eating', '2016-08-10', 'Eating with Family')
+)
+AS Source (ActivityID, ActivityName, ActivityTime, ActivityDescription)
+ON Target.ActivityID = Source.ActivityID
+WHEN NOT MATCHED BY TARGET THEN
+INSERT (ActivityName, ActivityTime, ActivityDescription)
+VALUES (ActivityName, ActivityTime, ActivityDescription);
 GO
 
 GO

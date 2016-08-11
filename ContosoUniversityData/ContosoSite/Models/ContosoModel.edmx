@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ContosoUniversityDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActivityTime" Type="datetime" />
+          <Property Name="ActivityDescription" Type="nvarchar" MaxLength="200" />
+        </EntityType>
         <EntityType Name="Alert">
           <Key>
             <PropertyRef Name="AlertId" />
@@ -72,6 +81,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ContosoUniversityDataModelStoreContainer">
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Alert" EntityType="Self.Alert" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
@@ -161,6 +171,7 @@
             <End Role="Enrollment" EntitySet="Enrollments" />
           </AssociationSet>
           <EntitySet Name="Alerts" EntityType="ContosoUniversityDataModel.Alert" />
+          <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
         </EntityContainer>
         <EntityType Name="Alert">
           <Key>
@@ -172,6 +183,15 @@
           <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
           <Property Name="Accepted" Type="Int32" />
           <Property Name="AcceptedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="ActivityID" />
+          </Key>
+          <Property Name="ActivityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityTime" Type="DateTime" Precision="3" />
+          <Property Name="ActivityDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -218,6 +238,16 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="AlertMessage" ColumnName="AlertMessage" />
                 <ScalarProperty Name="AlertId" ColumnName="AlertId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="ContosoUniversityDataModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+                <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
