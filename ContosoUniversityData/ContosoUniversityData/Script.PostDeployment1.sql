@@ -67,7 +67,11 @@ VALUES (AlertMessage, CreateDate, ExpirationDate, Accepted, AcceptedDate);
 MERGE INTO Activity AS Target
 USING (VALUES
 		(1, 'Chatting', '2016-08-09', 'Chat with Friend'),
-		(2, 'Eating', '2016-08-10', 'Eating with Family')
+		(2, 'Eating', '2016-08-10', 'Eating with Family'),
+		(3, 'Chatting', '2016-08-11', 'Chat with Friend'),
+		(4, 'Eating', '2016-08-11', 'Eating with Family'),
+		(5, 'Sleeping', '2016-08-11', 'Sleep in the bed'),
+		(6, 'Eating', '2016-08-11', 'Eating with Family')
 )
 AS Source (ActivityID, ActivityName, ActivityTime, ActivityDescription)
 ON Target.ActivityID = Source.ActivityID

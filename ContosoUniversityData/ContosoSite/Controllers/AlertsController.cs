@@ -20,6 +20,8 @@ namespace ContosoSite.Controllers
             return View(db.Alerts.ToList());
         }
 
+        
+
         // GET: Alerts/Details/5
         public ActionResult Details(int? id)
         {

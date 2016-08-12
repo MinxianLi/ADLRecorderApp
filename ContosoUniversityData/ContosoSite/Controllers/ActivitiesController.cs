@@ -20,6 +20,14 @@ namespace ContosoSite.Controllers
             return View(db.Activities.ToList());
         }
 
+        public int CountActivity()
+        {
+            using (var dbCount = new ContosoUniversityDataEntities())
+            {
+                return dbCount.Activities.Where(a => a.ActivityName == "Eating").Count();
+            }
+        }
+
         // GET: Activities/Details/5
         public ActionResult Details(int? id)
         {
