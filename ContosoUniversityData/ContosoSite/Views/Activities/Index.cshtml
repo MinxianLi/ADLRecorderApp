@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.ActivityDescription)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ActivityID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ActivityID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ActivityID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ActivityID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ActivityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ActivityID })
         </td>
     </tr>
 }
@@ -60,7 +60,9 @@ var myChart = new Chart(ctx, {
         labels: ["@Model.First().ActivityName", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [{
             label: '# of Votes',
-            data: [@Html.Action("CountActivity","Activities"), 19, 16, 20, 15, 14],
+            data: [@{Html.RenderAction("CountActivity", "Activities", new { activityname = "chatting" });},
+                @{Html.RenderAction("CountActivity", "Activities", new { activityname = "eating" });},
+                16, 20, 15, 14],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
