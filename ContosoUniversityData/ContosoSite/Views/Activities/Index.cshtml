@@ -57,12 +57,13 @@ var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ["@Model.First().ActivityName", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["@Model.First().ActivityName", "Eating", "Sleeping"],
         datasets: [{
             label: '# of Votes',
             data: [@{Html.RenderAction("CountActivity", "Activities", new { activityname = "chatting" });},
                 @{Html.RenderAction("CountActivity", "Activities", new { activityname = "eating" });},
-                16, 20, 15, 14],
+                @{Html.RenderAction("CountActivity", "Activities", new { activityname = "sleeping" });}
+                ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
