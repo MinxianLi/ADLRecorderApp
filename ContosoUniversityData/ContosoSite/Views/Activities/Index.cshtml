@@ -5,7 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<br />
+<button type="button" class="btn btn-success">Display Data</button>
+<br />
+<br />
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -46,10 +49,62 @@
 </table>
 
 
-
-<h2>Bar Chart</h2>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
 
+<br />
+<br />
+<br />
+<br />
+<button type="button" class="btn btn-success">Pie Chart</button>
+<canvas id="myChart2" width="400" height="400"></canvas>
+<script>
+
+var ctx = document.getElementById("myChart2");
+var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data : {
+        labels: [
+            "Chatting",
+            "Eating",
+            "Sleeping"
+        ],
+        datasets: [
+            {
+                data: [@{Html.RenderAction("CountActivity", "Activities", new { activityname = "chatting" });},
+                    @{Html.RenderAction("CountActivity", "Activities", new { activityname = "eating" });},
+                    @{Html.RenderAction("CountActivity", "Activities", new { activityname = "sleeping" });}],
+                backgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384",
+                    "#36A2EB",
+                    "#FFCE56"
+                ]
+            }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<button type="button" class="btn btn-success">Bar Chart</button>
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
 
@@ -98,44 +153,3 @@ var myChart = new Chart(ctx, {
 
 
 
-<h2>Pie Chart</h2>
-<canvas id="myChart2" width="400" height="400"></canvas>
-<script>
-
-var ctx = document.getElementById("myChart2");
-var myPieChart = new Chart(ctx,{
-    type: 'pie',
-    data : {
-        labels: [
-            "Chatting",
-            "Eating",
-            "Sleeping"
-        ],
-        datasets: [
-            {
-                data: [@{Html.RenderAction("CountActivity", "Activities", new { activityname = "chatting" });},
-                    @{Html.RenderAction("CountActivity", "Activities", new { activityname = "eating" });},
-                    @{Html.RenderAction("CountActivity", "Activities", new { activityname = "sleeping" });}],
-                backgroundColor: [
-                    "#FF6384",
-                    "#36A2EB",
-                    "#FFCE56"
-                ],
-                hoverBackgroundColor: [
-                    "#FF6384",
-                    "#36A2EB",
-                    "#FFCE56"
-                ]
-            }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>
