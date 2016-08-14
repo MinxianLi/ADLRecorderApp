@@ -108,18 +108,21 @@ VALUES (AlertMessage, CreateDate, ExpirationDate, Accepted, AcceptedDate);
 
 MERGE INTO Activity AS Target
 USING (VALUES
-		(1, 'Chatting', '2016-08-09', 'Chat with Friend'),
-		(2, 'Eating', '2016-08-10', 'Eating with Family'),
-		(3, 'Chatting', '2016-08-11', 'Chat with Friend'),
-		(4, 'Eating', '2016-08-11', 'Eating with Family'),
-		(5, 'Sleeping', '2016-08-11', 'Sleep in the bed'),
-		(6, 'Eating', '2016-08-11', 'Eating with Family')
+		(1, 'Chatting', 1, 2, '2016-08-09', 'Chat with Friend'),
+		(2, 'Eating', 1, 2,'2016-08-10', 'Eating with Family'),
+		(3, 'Chatting', 1, 2,'2016-08-11', 'Chat with Friend'),
+		(4, 'Eating',1, 2, '2016-08-11', 'Eating with Family'),
+		(5, 'Sleeping',1, 2, '2016-08-11', 'Sleep in the bed'),
+		(6, 'Eating', 1, 2,'2016-08-11', 'Eating with Family'),
+		(7, 'Eating', 12, 12,'2016-08-11', 'Eating with Family'),
+		(8, 'Chatting', 42.0308, -93.6319,'2016-08-14', 'Chat with Friend')
+
 )
-AS Source (ActivityID, ActivityName, ActivityTime, ActivityDescription)
+AS Source (ActivityID, ActivityName, Latitude, Longitude, ActivityTime, ActivityDescription)
 ON Target.ActivityID = Source.ActivityID
 WHEN NOT MATCHED BY TARGET THEN
-INSERT (ActivityName, ActivityTime, ActivityDescription)
-VALUES (ActivityName, ActivityTime, ActivityDescription);
+INSERT (ActivityName, Latitude, Longitude, ActivityTime, ActivityDescription)
+VALUES (ActivityName, Latitude, Longitude, ActivityTime, ActivityDescription);
 GO
 
 GO

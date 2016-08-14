@@ -93,5 +93,7 @@
     <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ActivityTime" Type="DateTime" Precision="3" />
     <Property Name="ActivityDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="Decimal" Precision="9" Scale="6" />
+    <Property Name="Longitude" Type="Decimal" Precision="9" Scale="6" />
   </EntityType>
 </Schema>

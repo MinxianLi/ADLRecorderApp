@@ -80,22 +80,23 @@ c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\Contoso
 c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.dll
 c:\users\mli\documents\visual studio 2015\Projects\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.pdb
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\ApplicationInsights.config
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\csc.exe
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\vbc.exe
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\VBCSCompiler.exe
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\ContosoSite.dll.config
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\ContosoSite.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\ContosoSite.pdb
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Antlr3.Runtime.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\EntityFramework.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\EntityFramework.SqlServer.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AI.Agent.Intercept.dll
@@ -129,12 +130,15 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.WebPages.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.WebPages.Razor.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\WebGrease.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.pdb
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AI.Web.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.ApplicationInsights.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Newtonsoft.Json.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.Helpers.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.Mvc.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.Optimization.xml
@@ -143,7 +147,6 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.WebPages.Deployment.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.WebPages.Razor.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Antlr3.Runtime.pdb
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Newtonsoft.Json.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\EntityFramework.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\EntityFramework.SqlServer.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.AspNet.Identity.Core.xml
@@ -160,7 +163,4 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.pdb
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.dll
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.pdb
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Chart.Mvc.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.csprojResolveAssemblyReference.cache

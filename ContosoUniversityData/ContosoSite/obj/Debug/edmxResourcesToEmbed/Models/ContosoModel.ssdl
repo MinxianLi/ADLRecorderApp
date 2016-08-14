@@ -6,6 +6,8 @@
     </Key>
     <Property Name="ActivityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+    <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
     <Property Name="ActivityTime" Type="datetime" />
     <Property Name="ActivityDescription" Type="nvarchar" MaxLength="200" />
   </EntityType>

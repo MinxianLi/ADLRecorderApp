@@ -46,6 +46,8 @@
     <EntitySetMapping Name="Activities">
       <EntityTypeMapping TypeName="ContosoUniversityDataModel.Activity">
         <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
           <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
           <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
           <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />

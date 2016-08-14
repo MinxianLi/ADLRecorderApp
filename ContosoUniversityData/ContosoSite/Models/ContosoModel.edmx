@@ -11,6 +11,8 @@
           </Key>
           <Property Name="ActivityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ActivityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Latitude" Type="decimal" Precision="9" Scale="6" />
+          <Property Name="Longitude" Type="decimal" Precision="9" Scale="6" />
           <Property Name="ActivityTime" Type="datetime" />
           <Property Name="ActivityDescription" Type="nvarchar" MaxLength="200" />
         </EntityType>
@@ -192,6 +194,8 @@
           <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ActivityTime" Type="DateTime" Precision="3" />
           <Property Name="ActivityDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Decimal" Precision="9" Scale="6" />
+          <Property Name="Longitude" Type="Decimal" Precision="9" Scale="6" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -244,6 +248,8 @@
           <EntitySetMapping Name="Activities">
             <EntityTypeMapping TypeName="ContosoUniversityDataModel.Activity">
               <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
                 <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
                 <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
                 <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />

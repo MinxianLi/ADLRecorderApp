@@ -18,5 +18,7 @@ namespace ContosoSite.Models
         public string ActivityName { get; set; }
         public Nullable<System.DateTime> ActivityTime { get; set; }
         public string ActivityDescription { get; set; }
+        public Nullable<decimal> Latitude { get; set; }
+        public Nullable<decimal> Longitude { get; set; }
     }
 }
