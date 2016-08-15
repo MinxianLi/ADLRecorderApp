@@ -20,6 +20,16 @@ namespace ContosoSite.Controllers
             return View(db.Activities.ToList());
         }
 
+        public ActionResult Map()
+        {
+            return View();
+        }
+
+        public ActionResult Map2()
+        {
+            return View();
+        }
+
         public int CountActivity(string activityname)
         {
             using (var dbCount = new ContosoUniversityDataEntities())

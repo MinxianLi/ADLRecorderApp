@@ -5,6 +5,10 @@
     ViewBag.Title = "Index";
 }
 
+<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRG0NRG3-AVehCqL9_7F4nanSJTH06P1U&callback=initMap"
+        async defer></script>
+
 <br />
 <br />
 <br />
@@ -18,6 +22,9 @@
 </p>
 <table class="table">
     <tr>
+        <th>
+
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ActivityName)
         </th>
@@ -38,6 +45,11 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            <a  class="btn btn-info btn-lg" onclick="location.href='@Url.Action("Map", "Activities")'">
+                <span class="glyphicon glyphicon-map-marker"></span> Map
+            </a>
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActivityName)
         </td>
@@ -166,30 +178,25 @@ var myChart = new Chart(ctx, {
 </script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRG0NRG3-AVehCqL9_7F4nanSJTH06P1U&callback=initMap"
-        async defer></script>
-
-<script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 42.0308, lng: 93.6319},
-          zoom: 8
-        });
-      }
-</script>
 
 <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    #map {
-        height: 100%;
+    #map_canvas img {
+        max-width: none;
     }
 </style>
+
+<!-- This css is to give a nice big popup "info window" when a marker is clicked on the map -->
+<style>
+    .infoDiv {
+        height: 200px;
+        width: 300px;
+        -webkit-user-select: none;
+        background-color: white;
+    }
+</style>
+<br />
+
+
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -199,7 +206,7 @@ var myChart = new Chart(ctx, {
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                <div id="map"></div>
+                <div id="map_canvas" style="height: 550px;"></div>
                 <h1>Hello, this works</h1>
             </div>
             <div class="modal-footer">
@@ -212,7 +219,71 @@ var myChart = new Chart(ctx, {
 
 
 
+<!-- Enclose the Javascript in a "section" so that it is rendered in the correct order after scripts have been loaded etc -->
+@section scripts {
+    <section class="scripts">
 
+        <script type="text/javascript">
+
+    <!-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
+    $(document).ready(function () {
+        Initialize();
+    });
+
+    // Where all the fun happens
+    function Initialize() {
+
+        // Google has tweaked their interface somewhat - this tells the api to use that new UI
+        google.maps.visualRefresh = true;
+        var Tunisie = new google.maps.LatLng(36.81881, 10.16596);
+
+        // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
+        var mapOptions = {
+            zoom: 8,
+            center: Tunisie,
+            mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
+        };
+
+        // This makes the div with id "map_canvas" a google map
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+        // a sample list of JSON encoded data of places to visit in Tunisia
+        // you can either make up a JSON list server side, or call it from a controller using JSONResult
+        var data = [
+                  { "Id": 1, "PlaceName": "Zaghouan", "GeoLong": "36.401081", "GeoLat": "10.16596" },
+                  { "Id": 2, "PlaceName": "Hammamet ", "GeoLong": "36.4", "GeoLat": "10.616667" },
+                  { "Id": 3, "PlaceName": "Sousse", "GeoLong": "35.8329809", "GeoLat": "10.63875" },
+                  { "Id": 4, "PlaceName": "Sfax", "GeoLong": "34.745159", "GeoLat": "10.7613" }
+               ];
+
+        // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
+        $.each(data, function (i, item) {
+            var marker = new google.maps.Marker({
+                'position': new google.maps.LatLng(item.GeoLong, item.GeoLat),
+                'map': map,
+                'title': item.PlaceName
+            });
+
+            // Make the marker-pin blue!
+            marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
+
+            // put in some information about each json object - in this case, the opening hours.
+            var infowindow = new google.maps.InfoWindow({
+                content: "<div class='infoDiv'><h2>" + item.PlaceName + "</div></div>"
+            });
+
+            // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
+
+        })
+    }
+
+
+        </script>
+    </section>
+}
 
 
 
