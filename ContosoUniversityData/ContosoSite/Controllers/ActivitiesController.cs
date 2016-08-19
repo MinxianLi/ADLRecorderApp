@@ -30,6 +30,18 @@ namespace ContosoSite.Controllers
             return View();
         }
 
+        public ActionResult Ajax()
+        {
+            return Content("success");
+        }
+
+        public ActionResult AjaxText(string text)
+        {
+            return Content(text);
+        }
+
+
+
         public int CountActivity(string activityname)
         {
             using (var dbCount = new ContosoUniversityDataEntities())
