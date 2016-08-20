@@ -16,6 +16,9 @@ function settime()
     var time = dateTime ;
 
     $("#clock").text(time);
+
+    $("#weather").fadeOut(10000);
+    $("#weather").fadeIn(10000);
 }
 
 
@@ -50,3 +53,11 @@ $.get("http://ipinfo.io", function (response) {
     $("#details").html(JSON.stringify(response, null, 4));
     $("#details").html(JSON.stringify(response, null, 4));
 }, "jsonp");
+
+
+
+//setInterval("settime()", 1000);
+//function settime() {
+//    $("#weather").fadeOut(3000);
+//    $("#weather").fadeIn(5000);
+//}
