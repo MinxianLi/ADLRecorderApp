@@ -75,7 +75,7 @@
     <strong>
         Hello!
     </strong>
-    <span id="span_text">This will be also change from input text.</span>
+    <span id="span_text">If you type "test", this will be change to "awesome", otherwise, it will be changed to what you type in text box</span>
 </div>
 
 <script>
@@ -95,10 +95,18 @@
 <script>
     $("#ajax_call_text").click(function(){
         $.ajax({
-            url: "/Activities/Ajax/?=" + $("#input_text_value").val(),
+            url: "/Activities/AjaxText?text=" + $("#input_text_value").val(),
             success:function(response)
             {
-                $("#span_text").text($("#input_text_value").val());
+                if(response == "test")
+                {
+                    $("#span_text").text("Awesome");
+                }
+                else
+                {
+                    $("#span_text").text($("#input_text_value").val());
+                }
+                
             }
         });
     })

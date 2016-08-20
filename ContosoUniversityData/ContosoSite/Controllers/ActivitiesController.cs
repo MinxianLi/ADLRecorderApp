@@ -37,7 +37,14 @@ namespace ContosoSite.Controllers
 
         public ActionResult AjaxText(string text)
         {
-            return Content(text);
+            if (text == "test")
+            {
+                return Content("test");
+            }
+            else
+            {
+                return Content("fail");
+            }
         }
 
 
