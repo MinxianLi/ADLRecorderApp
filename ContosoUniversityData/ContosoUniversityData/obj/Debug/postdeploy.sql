@@ -81,4 +81,7 @@ ON Target.ActivityID = Source.ActivityID
 WHEN NOT MATCHED BY TARGET THEN
 INSERT (ActivityName, Latitude, Longitude, ActivityTime, ActivityDescription)
 VALUES (ActivityName, Latitude, Longitude, ActivityTime, ActivityDescription);
+
+
+
 GO

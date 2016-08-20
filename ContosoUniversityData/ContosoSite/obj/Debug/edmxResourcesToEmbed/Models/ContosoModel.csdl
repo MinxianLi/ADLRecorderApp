@@ -73,6 +73,7 @@
     </AssociationSet>
     <EntitySet Name="Alerts" EntityType="ContosoUniversityDataModel.Alert" />
     <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
+    <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
   </EntityContainer>
   <EntityType Name="Alert">
     <Key>
@@ -95,5 +96,12 @@
     <Property Name="ActivityDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Latitude" Type="Decimal" Precision="9" Scale="6" />
     <Property Name="Longitude" Type="Decimal" Precision="9" Scale="6" />
+  </EntityType>
+  <EntityType Name="TotalUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TotalUser1" Type="Int32" />
   </EntityType>
 </Schema>

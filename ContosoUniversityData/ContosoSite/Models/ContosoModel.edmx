@@ -54,6 +54,13 @@
           <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
           <Property Name="EnrollmentDate" Type="date" />
         </EntityType>
+        <EntityType Name="TotalUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TotalUser" Type="int" />
+        </EntityType>
         <Association Name="FK_dbo_Enrollment_dbo_Course_CourseID">
           <End Role="Course" Type="Self.Course" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -88,6 +95,7 @@
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TotalUser" EntityType="Self.TotalUser" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_dbo_Enrollment_dbo_Course_CourseID" Association="Self.FK_dbo_Enrollment_dbo_Course_CourseID">
             <End Role="Course" EntitySet="Course" />
             <End Role="Enrollment" EntitySet="Enrollment" />
@@ -174,6 +182,7 @@
           </AssociationSet>
           <EntitySet Name="Alerts" EntityType="ContosoUniversityDataModel.Alert" />
           <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
+          <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
         </EntityContainer>
         <EntityType Name="Alert">
           <Key>
@@ -196,6 +205,13 @@
           <Property Name="ActivityDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Latitude" Type="Decimal" Precision="9" Scale="6" />
           <Property Name="Longitude" Type="Decimal" Precision="9" Scale="6" />
+        </EntityType>
+        <EntityType Name="TotalUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TotalUser1" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -254,6 +270,14 @@
                 <ScalarProperty Name="ActivityTime" ColumnName="ActivityTime" />
                 <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
                 <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TotalUsers">
+            <EntityTypeMapping TypeName="ContosoUniversityDataModel.TotalUser">
+              <MappingFragment StoreEntitySet="TotalUser">
+                <ScalarProperty Name="TotalUser1" ColumnName="TotalUser" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

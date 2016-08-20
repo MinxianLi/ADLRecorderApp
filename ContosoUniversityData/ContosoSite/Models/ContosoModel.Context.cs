@@ -30,5 +30,6 @@ namespace ContosoSite.Models
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Alert> Alerts { get; set; }
         public virtual DbSet<Activity> Activities { get; set; }
+        public virtual DbSet<TotalUser> TotalUsers { get; set; }
     }
 }

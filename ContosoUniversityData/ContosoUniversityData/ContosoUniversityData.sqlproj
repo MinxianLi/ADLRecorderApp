@@ -64,6 +64,7 @@
     <Build Include="Enrollment.sql" />
     <Build Include="Alert.sql" />
     <Build Include="Activity.sql" />
+    <Build Include="TotalUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment1.sql" />
