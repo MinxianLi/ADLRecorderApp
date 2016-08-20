@@ -44,6 +44,32 @@
                     Current time:
                 </strong>
                 <span id="clock"></span>
+                <div><strong>Your IP: </strong><span id="ip"></span></div>
+                <div><strong>Your Address: </strong><span id="address"></span></div>
+                <div style="padding:10px">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                        View details
+                    </button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                <h4 class="modal-title" id="myModalLabel" align="left">Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                <pre id="details" align="left"></pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
