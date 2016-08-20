@@ -163,4 +163,3 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.pdb
-C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\obj\Debug\ContosoSite.csprojResolveAssemblyReference.cache
