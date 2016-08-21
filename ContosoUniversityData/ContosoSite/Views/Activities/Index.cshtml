@@ -40,7 +40,7 @@
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
         <li role="presentation" onclick="showBar()"><a role="menuitem" tabindex="-1" href="#display_bar">Bar Chart</a></li>
         <li role="presentation" onclick="showPie()"><a role="menuitem" tabindex="-1" href="#display_pie">Pie Chart</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chart</a></li>
+        <li role="presentation" onclick="showTable()"><a role="menuitem" tabindex="-1" href="#display_table">Table Display</a></li>
         <li role="presentation" class="divider"></li>
         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
     </ul>
@@ -55,6 +55,11 @@
     function showPie()
     {
         $("#display_pie").show();
+    }
+
+    function showTable()
+    {
+        $("#display_table").show();
     }
 </script>
 <br />
@@ -160,63 +165,66 @@
 
 
 <hr />
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
+<div id="display_table" hidden="true">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
 
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivityName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivityTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ActivityDescription)
-        </th>
-        <th></th>
-    </tr>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityDescription)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <a  class="btn btn-info btn-lg" onclick="location.href='@Url.Action("Map", "Activities")'">
-                <span class="glyphicon glyphicon-map-marker"></span> Map
-            </a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivityName)
-        </td>
-        <td data-toggle="modal" data-target="#myModal">
-            @Html.DisplayFor(modelItem => item.Latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivityTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ActivityDescription)
-        </td>
-        <td>
-            <button type="button" class="btn btn-success btn-lg">@Html.ActionLink("Edit", "Edit", new { id = item.ActivityID })  </button> |
-            <button type="button" class="btn btn-info btn-lg">@Html.ActionLink("Details", "Details", new { id = item.ActivityID }) </button> |
-            <button type="button" class="btn btn-danger btn-lg">@Html.ActionLink("Delete", "Delete", new { id = item.ActivityID })</button>
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info btn-lg" onclick="location.href='@Url.Action("Map", "Activities")'">
+                        <span class="glyphicon glyphicon-map-marker"></span> Map
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityName)
+                </td>
+                <td data-toggle="modal" data-target="#myModal">
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityDescription)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success btn-lg">@Html.ActionLink("Edit", "Edit", new { id = item.ActivityID })  </button> |
+                    <button type="button" class="btn btn-info btn-lg">@Html.ActionLink("Details", "Details", new { id = item.ActivityID }) </button> |
+                    <button type="button" class="btn btn-danger btn-lg">@Html.ActionLink("Delete", "Delete", new { id = item.ActivityID })</button>
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
