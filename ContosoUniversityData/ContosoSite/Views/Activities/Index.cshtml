@@ -12,8 +12,51 @@
 
 <br />
 <br />
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle btn-lg" id="menu1" type="button" data-toggle="dropdown">
+        Reports
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Daily Report</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Weekly Report</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Monthly Report</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+    </ul>
+</div>
+
+
+
 <br />
-<button type="button"  class="btn btn-success btn-lg">Display Data</button>
+
+
+<div class="dropdown">
+    <button class="btn btn-success dropdown-toggle btn-lg" id="menu1" type="button" data-toggle="dropdown">
+        Display Data
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        <li role="presentation" onclick="showBar()"><a role="menuitem" tabindex="-1" href="#display_bar">Bar Chart</a></li>
+        <li role="presentation" onclick="showPie()"><a role="menuitem" tabindex="-1" href="#display_pie">Pie Chart</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chart</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    function showBar()
+    {
+        $("#display_bar").show();
+    }
+
+    function showPie()
+    {
+        $("#display_pie").show();
+    }
+</script>
 <br />
 <br />
 
@@ -183,14 +226,16 @@
 <br />
 <br />
 <hr />
-<div width="100%" height="100%" align="center" valign="center">
+<div width="100%" height="100%" align="center" valign="center" hidden="true" id="display_pie">
     <button type="button" class="btn btn-success btn-lg">Pie Chart</button>
     <canvas id="myChart2" width="200" height="200"></canvas>
 </div>
+
+
+
+
+
 <script>
-
-
-
 var ctx = document.getElementById("myChart2");
 var myPieChart = new Chart(ctx,{
     type: 'pie',
@@ -237,8 +282,10 @@ var myPieChart = new Chart(ctx,{
 <br />
 <br />
 <hr />
-<button type="button" class="btn btn-success btn-lg">Bar Chart</button>
-<canvas id="myChart" width="400" height="400"></canvas>
+<div width="100%" height="100%" align="center" valign="center" id="display_bar" hidden="true">
+    <button type="button" class="btn btn-success btn-lg">Bar Chart</button>
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div>
 <script>
 
 var ctx = document.getElementById("myChart");
