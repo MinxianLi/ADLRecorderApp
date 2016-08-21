@@ -6,6 +6,7 @@
 }
 @Scripts.Render("~/bundles/jquery")
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRG0NRG3-AVehCqL9_7F4nanSJTH06P1U&callback=initMap"
         async defer></script>
@@ -19,16 +20,87 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Daily Report</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Weekly Report</a></li>
-        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Monthly Report</a></li>
+        <li role="presentation" onclick="showDay()"><a role="menuitem" tabindex="-1" href="#show-date-summary">Daily Report</a></li>
+        <li role="presentation" onclick="showWeek()"><a role="menuitem" tabindex="-1" href="#show-date-summary">Weekly Report</a></li>
+        <li role="presentation" onclick="showMonth()"><a role="menuitem" tabindex="-1" href="#show-date-summary">Monthly Report</a></li>
         <li role="presentation" class="divider"></li>
         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
     </ul>
 </div>
 
+<br />
+<br />
+
+<div hidden="true" id="show-date-summary">
+    <div>
+        Start Date: <input type="datetime" name="startdate" id="start_datepicker" />
+        End Date: <input type="text" name="enddate" id="end_datepicker" />
+    </div>
+    <br />
+    <div>
+        <button id="submit_date" class="btn btn-warning btn-lg">Submit Date</button>
+    </div>
+    <br />
+    <p hidden="true" id="show_count_number">There are <span id="count_date"></span> records in Database between <span id="display-start-date"></span> and <span id="display-end-date"></span></p>
+</div>
+
+<script type="text/javascript">
+    function showDay()
+    {
+        $("#show-date-summary").show();
+    }
+
+    function showWeek()
+    {
+        $("#show-date-summary").show();
+    }
+
+    function showMonth()
+    {
+        $("#show-date-summary").show();
+    }
+</script>
 
 
+<script>
+    $(document).ready(function() {
+        $("#start_datepicker").datepicker();
+        $("#end_datepicker").datepicker();
+
+    });
+</script>
+
+<script>
+    $("#submit_date").click(function(){
+        $.ajax({
+            url: "/Activities/AjaxDate",
+            data : { activityStartTime: $("#start_datepicker").val(),
+                activityEndTime: $("#end_datepicker").val()
+
+            },
+            success: function (response) {
+                $("#count_date").text(response);
+            }
+        });
+
+        $("#show_count_number").show();
+
+        $("#display-start-date").text($("#start_datepicker").val());
+        $("#display-end-date").text($("#end_datepicker").val());
+    })
+</script>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <br />
 
 

@@ -29,6 +29,10 @@ namespace ContosoSite
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                      "~/Scripts/custom.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery/ui").Include(
+                     "~/Scripts/jquery-ui-1.12.0.js"));
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

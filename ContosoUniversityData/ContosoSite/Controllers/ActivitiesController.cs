@@ -47,6 +47,22 @@ namespace ContosoSite.Controllers
             }
         }
 
+        //AJAX Submit date
+        public int AjaxDate(DateTime activityStartTime, DateTime activityEndTime)
+        {
+            try
+            {
+                using (var dbPickDate = new ContosoUniversityDataEntities())
+                {
+                  
+                    return dbPickDate.Activities.Where(a => a.ActivityTime >= activityStartTime & a.ActivityTime <= activityEndTime).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                return 10;
+            }
+        }
 
 
         public int CountActivity(string activityname)
