@@ -15,9 +15,19 @@ namespace ContosoSite.Controllers
         private ContosoUniversityDataEntities db = new ContosoUniversityDataEntities();
 
         // GET: Students
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Students.ToList());
+            var students = from s in db.Students
+                          select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    students = students.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
+                                           || s.FirstName.ToUpper().Contains(searchString.ToUpper()));
+                }
+            }
+            return View(students.ToList());
         }
 
         // GET: Students/Details/5
