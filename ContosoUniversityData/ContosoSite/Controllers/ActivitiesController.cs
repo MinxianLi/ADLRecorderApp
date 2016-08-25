@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ContosoSite.Models;
+using System.Data.Entity.Core.Objects;
 
 namespace ContosoSite.Controllers
 {
@@ -16,6 +17,47 @@ namespace ContosoSite.Controllers
 
         // GET: Activities
         public ActionResult Index()
+        {
+            return View(db.Activities.Where(a => a.ActivityName.Contains("Sleeping")).ToList());
+            //return View(db.Activities.ToList());
+        }
+
+        public ActionResult TestTable()
+
+        {
+            DateTime datetime = Convert.ToDateTime("08/23/2016");
+            if (datetime.TimeOfDay != TimeSpan.Zero)
+            {
+                return View(db.Activities.Where(a => a.ActivityTime == datetime).ToList());
+            }
+            else
+            {
+                DateTime plusOneDateTime = datetime.AddDays(1).Date;
+                return View(db.Activities.Where(a => a.ActivityTime >= datetime.Date && a.ActivityTime < plusOneDateTime));
+            }
+
+        }
+
+        public ActionResult ShowDateTable(DateTime activityStartTime2, DateTime activityEndTime2)
+        {
+            //try
+            //{
+            //    using (var dbShowDate = new ContosoUniversityDataEntities())
+            //    {
+
+            //        return View(dbShowDate.Activities.Where(a => a.ActivityTime.Value >= activityStartTime2 & a.ActivityTime <= activityEndTime2).ToList());
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    return Content("this not correct");
+            //}
+
+
+            return PartialView(db.Activities.Where(a => a.ActivityTime >= activityStartTime2 && a.ActivityTime <= activityEndTime2).ToList());
+        }
+
+        public ActionResult ShowDateTableInit()
         {
             return View(db.Activities.ToList());
         }

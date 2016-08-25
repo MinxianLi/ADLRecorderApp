@@ -410,6 +410,9 @@
     <Content Include="Views\Activities\Index.cshtml" />
     <Content Include="Views\Activities\Map.cshtml" />
     <Content Include="Views\Activities\Map2.cshtml" />
+    <Content Include="Views\Activities\TestTable.cshtml" />
+    <Content Include="Views\Activities\ShowDateTableInit.cshtml" />
+    <Content Include="Views\Activities\ShowDateTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
