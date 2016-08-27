@@ -77,6 +77,11 @@ namespace ContosoSite.Controllers
             return View();
         }
 
+        public ActionResult KendoUI()
+        {
+            return View();
+        }
+
         public ActionResult Map()
         {
             return View();

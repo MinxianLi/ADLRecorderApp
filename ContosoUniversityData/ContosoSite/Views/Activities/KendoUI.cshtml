@@ -1,0 +1,18 @@
+﻿@model ContosoSite.Models.Activity
+
+@{
+    ViewBag.Title = "KendoUI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jquery/ui")
+@Scripts.Render("~/bundles/kendo")
+
+<h2>KendoUI</h2>
+
+@(Html.Kendo().DatePicker().Name("datepicker"))
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
