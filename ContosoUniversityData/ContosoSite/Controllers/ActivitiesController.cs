@@ -62,6 +62,21 @@ namespace ContosoSite.Controllers
             return View(db.Activities.ToList());
         }
 
+        public ActionResult AmMap()
+        {
+            return View();
+        }
+
+        public ActionResult AmStock()
+        {
+            return View();
+        }
+
+        public ActionResult AmPie()
+        {
+            return View();
+        }
+
         public ActionResult Map()
         {
             return View();

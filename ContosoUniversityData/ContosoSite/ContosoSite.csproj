@@ -413,6 +413,9 @@
     <Content Include="Views\Activities\TestTable.cshtml" />
     <Content Include="Views\Activities\ShowDateTableInit.cshtml" />
     <Content Include="Views\Activities\ShowDateTable.cshtml" />
+    <Content Include="Views\Activities\AmMap.cshtml" />
+    <Content Include="Views\Activities\AmStock.cshtml" />
+    <Content Include="Views\Activities\AmPie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
