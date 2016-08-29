@@ -815,6 +815,11 @@
     <Content Include="Scripts\kendo\kendo.window.min.js.map" />
     <Content Include="Scripts\kendo\kendo.aspnetmvc.min.js.map" />
     <Content Include="Views\Activities\KendoUI.cshtml" />
+    <Content Include="Views\Activities\VisitedStates.cshtml" />
+    <Content Include="Views\Activities\PickDate.cshtml" />
+    <Content Include="Views\Activities\NullTest.cshtml" />
+    <Content Include="Views\Activities\getIntInput.cshtml" />
+    <Content Include="Views\Activities\enterIntInput.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

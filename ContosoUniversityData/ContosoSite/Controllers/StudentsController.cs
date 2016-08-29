@@ -15,8 +15,17 @@ namespace ContosoSite.Controllers
         private ContosoUniversityDataEntities db = new ContosoUniversityDataEntities();
 
         // GET: Students
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string lastName, string searchString)
         {
+            var GenreLst = new List<string>();
+
+            var GenreQry = from d in db.Students
+                           orderby d.LastName
+                           select d.LastName;
+
+            GenreLst.AddRange(GenreQry.Distinct());
+            ViewBag.lastName = new SelectList(GenreLst);
+
             var students = from s in db.Students
                           select s;
             if (!String.IsNullOrEmpty(searchString))
@@ -27,6 +36,12 @@ namespace ContosoSite.Controllers
                                            || s.FirstName.ToUpper().Contains(searchString.ToUpper()));
                 }
             }
+
+            if (!string.IsNullOrEmpty(lastName))
+            {
+                students = students.Where(x => x.LastName == lastName);
+            }
+
             return View(students.ToList());
         }
 

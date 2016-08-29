@@ -1,0 +1,41 @@
+﻿@model ContosoSite.Models.Activity
+
+@{
+    ViewBag.Title = "enterIntInput";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/jquery")
+<h2>enterIntInput</h2>
+
+
+
+<div id="show-int-summary">
+    <div>
+        Enter Int: <input type="text" id="input_text_value2" placeholder="Enter the content" />
+    </div>
+    <br />
+    <div>
+        <button id="submit_int_value" class="btn btn-warning btn-lg">Submit Int Value</button>
+    </div>
+    <br />
+    
+</div>
+
+
+
+<script>
+    $("#submit_int_value").click(function () {
+        $.ajax({
+            url: "/Activities/getIntInput",
+            data: {
+                valueGet: $("#input_text_value2").val()
+
+            },
+            success: function (response) {
+                alert("call");
+            }
+        });
+
+        
+    })
+</script>

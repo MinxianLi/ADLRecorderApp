@@ -38,6 +38,33 @@ namespace ContosoSite.Controllers
 
         }
 
+        public ActionResult enterIntInput()
+        {
+            return View();
+        }
+        
+        public ActionResult getIntInput(int valueGet)
+        {
+            return RedirectToAction("NullTest", "Activities", new { inputTest = valueGet });
+        }
+
+
+        public ActionResult NullTest(int inputTest)
+        {
+            //inputTest = 3;
+            try
+            {
+                
+                return View(db.Activities.Where(a => a.ActivityID == inputTest).ToList());
+            }
+
+
+            catch (Exception ex)
+            {
+                return View();
+            }
+        }
+
         public ActionResult ShowDateTable(DateTime activityStartTime2, DateTime activityEndTime2)
         {
             //try
@@ -54,12 +81,17 @@ namespace ContosoSite.Controllers
             //}
 
 
-            return PartialView(db.Activities.Where(a => a.ActivityTime >= activityStartTime2 && a.ActivityTime <= activityEndTime2).ToList());
+            return View(db.Activities.Where(a => a.ActivityTime >= activityStartTime2 && a.ActivityTime <= activityEndTime2).ToList());
         }
 
         public ActionResult ShowDateTableInit()
         {
             return View(db.Activities.ToList());
+        }
+
+        public ActionResult PickDate()
+        {
+            return View();
         }
 
         public ActionResult AmMap()
@@ -78,6 +110,11 @@ namespace ContosoSite.Controllers
         }
 
         public ActionResult KendoUI()
+        {
+            return View();
+        }
+
+        public ActionResult VisitedStates()
         {
             return View();
         }
