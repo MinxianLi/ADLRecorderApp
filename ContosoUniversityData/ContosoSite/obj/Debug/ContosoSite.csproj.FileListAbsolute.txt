@@ -185,3 +185,7 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\C
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\tr-TR\Kendo.Mvc.resources.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.Http.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Net.Http.Formatting.dll
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Web.Http.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\ContosoUniversityData\ContosoSite\bin\System.Net.Http.Formatting.xml

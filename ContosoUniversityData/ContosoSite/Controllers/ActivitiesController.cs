@@ -22,6 +22,17 @@ namespace ContosoSite.Controllers
             //return View(db.Activities.ToList());
         }
 
+        public JsonResult JsonView()
+        {
+            var data = db.Activities.ToList();
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult CallAnotherProjectView()
+        {
+            return Redirect("http://localhost:54107/activitymodels");
+        }
+
         public ActionResult TestTable()
 
         {
