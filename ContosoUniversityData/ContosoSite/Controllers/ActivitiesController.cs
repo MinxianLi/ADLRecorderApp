@@ -117,6 +117,7 @@ namespace ContosoSite.Controllers
 
         public ActionResult AmPie()
         {
+            ViewBag.ChattingNumber = db.Activities.Where(a => a.ActivityName == "Chatting").Count();
             return View();
         }
 
