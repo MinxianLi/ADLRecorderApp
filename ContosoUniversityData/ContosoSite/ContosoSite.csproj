@@ -262,6 +262,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image\ADL.png" />
+    <Content Include="Content\Image\chatting.png" />
+    <Content Include="Content\Image\eating.png" />
+    <Content Include="Content\Image\sleeping.png" />
     <Content Include="Content\kendo\kendo.black.min.css" />
     <Content Include="Content\kendo\kendo.black.mobile.min.css" />
     <Content Include="Content\kendo\kendo.blueopal.min.css" />
@@ -820,6 +823,8 @@
     <Content Include="Views\Activities\NullTest.cshtml" />
     <Content Include="Views\Activities\getIntInput.cshtml" />
     <Content Include="Views\Activities\enterIntInput.cshtml" />
+    <Content Include="Views\Activities\AmBar.cshtml" />
+    <Content Include="Views\Activities\FilterTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

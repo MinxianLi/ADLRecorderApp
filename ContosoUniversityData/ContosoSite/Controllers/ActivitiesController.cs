@@ -18,8 +18,39 @@ namespace ContosoSite.Controllers
         // GET: Activities
         public ActionResult Index()
         {
-            return View(db.Activities.Where(a => a.ActivityName.Contains("Sleeping")).ToList());
-            //return View(db.Activities.ToList());
+           // return View(db.Activities.Where(a => a.ActivityName.Contains("Sleeping")).ToList());
+            return View(db.Activities.ToList());
+        }
+
+        public ActionResult FilterTable(string activityName, string searchString)
+        {
+            var activityNameLst = new List<string>();
+
+            var activtyNameQry = from d in db.Activities
+                                 orderby d.ActivityName
+                                 select d.ActivityName;
+
+            activityNameLst.AddRange(activtyNameQry.Distinct());
+            ViewBag.activityName = new SelectList(activityNameLst);
+
+            var activities = from a in db.Activities
+                             select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    activities = activities.Where(s => s.ActivityName.ToUpper().Contains(searchString.ToUpper())
+                                           || s.ActivityDescription.ToUpper().Contains(searchString.ToUpper()));
+                }
+            }
+
+            if (!string.IsNullOrEmpty(activityName))
+            {
+                activities = activities.Where(x => x.ActivityName == activityName);
+            }
+
+            return View(activities.ToList());
         }
 
         public JsonResult JsonView()
@@ -118,8 +149,20 @@ namespace ContosoSite.Controllers
         public ActionResult AmPie()
         {
             ViewBag.ChattingNumber = db.Activities.Where(a => a.ActivityName == "Chatting").Count();
+            ViewBag.EatingNumber = db.Activities.Where(a => a.ActivityName == "Eating").Count();
+            ViewBag.SleepingNumber = db.Activities.Where(a => a.ActivityName == "Sleeping").Count();
             return View();
         }
+
+        public ActionResult AmBar()
+        {
+            ViewBag.ChattingNumber = db.Activities.Where(a => a.ActivityName == "Chatting").Count();
+            ViewBag.EatingNumber = db.Activities.Where(a => a.ActivityName == "Eating").Count();
+            ViewBag.SleepingNumber = db.Activities.Where(a => a.ActivityName == "Sleeping").Count();
+            return View();
+        }
+
+
 
         public ActionResult KendoUI()
         {
