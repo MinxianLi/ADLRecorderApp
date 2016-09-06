@@ -51,7 +51,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[Student].[StudentID]" />
+								<References Name="[dbo].[TotalUser].[Id]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -59,67 +59,10 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[Student]" />
+					<References Name="[dbo].[TotalUser]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Enrollment].[EnrollmentID]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Enrollment]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Course].[CourseID]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Course]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Alert].[AlertId]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Alert]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -138,6 +81,63 @@
 					<References Name="[dbo].[Activity]" />
 				</Entry>
 			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Alert].[AlertId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Alert]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Enrollment].[EnrollmentID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Enrollment]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[Course].[CourseID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Course]" />
+				</Entry>
+			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
@@ -146,7 +146,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[TotalUser].[Id]" />
+								<References Name="[dbo].[Student].[StudentID]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -154,7 +154,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[TotalUser]" />
+					<References Name="[dbo].[Student]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
@@ -266,7 +266,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="4" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Alert]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -370,7 +370,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="6" />
+			<AttachedAnnotation Disambiguator="5" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Course]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -429,7 +429,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="5" />
+			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[Enrollment]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -506,7 +506,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="4" />
+			<AttachedAnnotation Disambiguator="6" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
@@ -647,7 +647,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="3" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[TotalUser]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -666,7 +666,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="8" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>

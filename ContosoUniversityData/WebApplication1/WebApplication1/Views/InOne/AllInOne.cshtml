@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "AllInOne";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--
+    
+
+<script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    -->
+@Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/InOne/getActionListAjax",
+            success: function (response) {
+               
+                imgHtml = "";
+                if (response.indexOf("night") > 0){
+                    imgHtml = "<img src='../ADLImage/night.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Moving") > -1){
+                    imgHtml = "<img src='../ADLImage/moving.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("day") > 0 ) {
+                    imgHtml += "<img src='../ADLImage/day.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Lying") > 0) {
+                    imgHtml += "<img src='../ADLImage/sleep.png' height='100' width='100' />";
+                }
+                if (response.indexOf("cook") > 0) {
+                    imgHtml += "<img src='../ADLImage/cook.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Same") > 0) {
+                    imgHtml += "<img src='../ADLImage/p1.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Still") > -1) {
+                    imgHtml += "<img src='../ADLImage/p1.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("another") > -1) {
+                    imgHtml += "<img src='../ADLImage/p2.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Watch") > 0) {
+                    imgHtml += "<img src='../ADLImage/watch.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("sleep") > 0) {
+                    imgHtml += "<img src='../ADLImage/sleep.png' height='100' width='100' />";
+                }
+                if (response.indexOf("step") > 0) {
+                    imgHtml += "<img src='../ADLImage/walk.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("stand") > 0) {
+                    imgHtml += "<img src='../ADLImage/stand.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("shop") > 0) {
+                    imgHtml += "<img src='../ADLImage/shop.png' height='100' width='100' />";
+                }
+                if (response.indexOf("drive") > 0) {
+                    imgHtml += "<img src='../ADLImage/drive.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("meal") > 0) {
+                    imgHtml += "<img src='../ADLImage/meal.jpg' height='100' width='100' />";
+                }
+                if (response.indexOf("Sit") > 0) {
+                    imgHtml += "<img src='../ADLImage/sit.png' height='100' width='100' />";
+                }
+               
+                $("#adlAction").html(imgHtml);
+               
+            }
+        });
+
+    });
+</script>
+
+<h2>AllInOne</h2>
+
+<li>User: @ViewBag.Username</li>
+<li>@ViewBag.Date</li>
+<li>@ViewBag.Time</li>
+<li>@ViewBag.Action</li>
+<li>Actions: <br /><div id="adlAction"></div></li>
+
+<li>WiFi: @ViewBag.Location</li>
+
+<li>Location:</li>
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=@ViewBag.Longitude,@ViewBag.Latitude&zoom=14&size=640x400&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyC4meMcaNYrctbEZ-pWEkTl_NMTK0E_FpI">
+<!-- 
+<li>Phone:</li>
+--> 
+
+

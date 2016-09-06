@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebApplication1.Models.ActivityModels>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Action)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActionPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WiFi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActionPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WiFi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

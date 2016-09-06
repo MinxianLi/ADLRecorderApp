@@ -1,0 +1,156 @@
+﻿@model WebApplication1.Models.ActivityModels
+            @using  System.Text
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions {
+    public static IHtmlString Check(string actionStr, string wifiStr)
+    {
+        StringBuilder result = new StringBuilder();
+        if (actionStr.IndexOf("Stand")>-1){
+            result.Append("<img src = \"../../ADLImage/stand.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Sit")>-1){
+            result.Append("<img src = \"../../ADLImage/sit.png\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Lying") > -1)
+        {
+            result.Append("<img src = \"../../ADLImage/lying.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("night") > 0){
+            result.Append("<img src = \"../../ADLImage/night.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Moving") > -1){
+            result.Append("<img src = \"../../ADLImage/moving.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("day") > 0 ) {
+            result.Append("<img src = \"../../ADLImage/day.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("cook") > 0) {
+            result.Append("<img src = \"../../ADLImage/cook.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Same") > 0) {
+            result.Append("<img src = \"../../ADLImage/p1.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Still") > -1) {
+            result.Append("<img src = \"../../ADLImage/still.png\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("another") > -1) {
+            result.Append("<img src = \"../../ADLImage/p2.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Watch") > 0) {
+            result.Append("<img src = \"../../ADLImage/watch.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Sleep") > 0 && actionStr.IndexOf("Watch") < 0 ) {
+            result.Append("<img src = \"../../ADLImage/sleep.png\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("step") > 0) {
+            result.Append("<img src = \"../../ADLImage/walk.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("shop") > 0) {
+            result.Append("<img src = \"../../ADLImage/shop.png\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("drive") > 0) {
+            result.Append("<img src = \"../../ADLImage/drive.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Meal") > 0 ) {
+            result.Append("<img src = \"../../ADLImage/meal.jpg\" height = '50' width = '50' />");
+        }
+        if (actionStr.IndexOf("Work") > 0) {
+            result.Append("<img src = \"../../ADLImage/work.jpg\" height = '50' width = '50' />");
+        }
+        if (wifiStr.ToLower().IndexOf("walmart") > -1 || wifiStr.ToLower().IndexOf("eagle") > -1) {
+            result.Append("<img src = \"../../ADLImage/shop.png\" height = '50' width = '50' />");
+        }
+        return new HtmlString(result.ToString());
+    }
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ADL details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Action)
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Action)
+            
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WiFi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WiFi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionPic)
+        </dt>
+
+        <dd>
+        
+            @Check(@Model.Action, @Model.WiFi)
+        
+        </dd>
+        <dt>Location</dt>
+        <dd>
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=model.Longitude,model.Latitude&zoom=14&size=640x400&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyC4meMcaNYrctbEZ-pWEkTl_NMTK0E_FpI">
+        </dd>
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

@@ -1,0 +1,89 @@
+﻿@model WebApplication1.Models.ActivityModels
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ActivityModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Action)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Action)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActionPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActionPic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WiFi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WiFi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
