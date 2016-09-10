@@ -825,6 +825,7 @@
     <Content Include="Views\Activities\enterIntInput.cshtml" />
     <Content Include="Views\Activities\AmBar.cshtml" />
     <Content Include="Views\Activities\FilterTable.cshtml" />
+    <Content Include="Views\Activities\KendoUIGrid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

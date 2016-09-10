@@ -26,7 +26,7 @@ namespace ContosoSite
         protected void Session_Start()
         {
             Application.Lock();
-            Application["Totaluser"] = (int)Application["Totaluser"] + 1;
+            Application["Totaluser"] = (int)Application["Totaluser"] + 1 ;
             using (var dbInsertTotalUser = new ContosoUniversityDataEntities())
             {
                 foreach (var b in dbInsertTotalUser.TotalUsers)

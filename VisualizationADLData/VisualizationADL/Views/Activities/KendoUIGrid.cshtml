@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ContosoSite.Models.Activity>
+
+@{
+    ViewBag.Title = "KendoUIGrid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KendoUIGrid</h2>
+
+
+
+
+@(Html.Kendo().Grid<ContosoSite.Models.Activity>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.ActivityID);
+            columns.Bound(c => c.ActivityName);
+            columns.Bound(c => c.ActivityTime);
+            columns.Bound(c => c.ActivityDescription);
+            columns.Bound(c => c.Latitude);
+            columns.Bound(c => c.Longitude);
+            //columns.Command(command => { command.Edit(); }).Width(250);
+            //columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+        //.ToolBar(toolbar => { toolbar.Create(); toolbar.Excel(); })
+        .ToolBar(toolbar => { toolbar.Excel(); })
+        //.Editable(editable => editable.Mode(GridEditMode.InLine))
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Excel(excel => excel
+            .FileName("Kendo UI Grid Export.xlsx")
+            .Filterable(true)
+            .ProxyURL(Url.Action("Excel_Export_Save", "Grid"))
+        )
+        .Pageable(pageable => pageable
+            .Input(true)
+            .Numeric(false)
+            .Refresh(true)
+            .Refresh(true)
+            .PreviousNext(true)
+            .Info(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Model(model =>
+            {
+                model.Id(p => p.ActivityID);
+                //model.Field(p => p.ValueStreamId).Editable(false);
+                //model.Field(p => p.Name).Editable(false);
+            })
+            .Read(read => read.Action("Activity_Read", "Activities"))
+            //.Create(update => update.Action("Create", "SPReader"))
+            //.Update(update => update.Action("Update", "SPReader"))
+            .PageSize(5)
+        )
+)
+
+<style>
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>

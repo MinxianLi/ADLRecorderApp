@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using ContosoSite.Models;
 using System.Data.Entity.Core.Objects;
+using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
 
 namespace ContosoSite.Controllers
 {
@@ -63,6 +65,33 @@ namespace ContosoSite.Controllers
         {
             return Redirect("http://localhost:54107/activitymodels");
         }
+
+
+
+
+
+        public ActionResult KendoUIGrid()
+        {
+            return View();
+        }
+
+        public ActionResult Activity_Read([DataSourceRequest]DataSourceRequest request)
+        {
+            return Json(Get_Activity().ToDataSourceResult(request));
+        }
+
+        private static IEnumerable<Activity> Get_Activity()
+        {
+            var db = new ContosoUniversityDataEntities();
+            return db.Activities.ToList();
+
+        }
+
+
+
+
+
+
 
         public ActionResult TestTable()
 
