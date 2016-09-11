@@ -219,6 +219,7 @@
     <Compile Include="Models\Activity.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivityViewModel.cs" />
     <Compile Include="Models\Alert.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>

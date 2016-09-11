@@ -9,7 +9,8 @@ namespace ContosoSite
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-1.12.4.js"));
+                        "~/Scripts/jquery-1.12.4.js",
+                        "~/Scripts/kendo/jszip.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -44,7 +45,11 @@ namespace ContosoSite
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
                 "~/Content/kendo/kendo.common-bootstrap.min.css",
-                "~/Content/kendo/kendo.bootstrap.min.css"));
+                "~/Content/kendo/kendo.bootstrap.min.css",
+                "~/Content/kendo/kendo.common.min.css",
+                "~/Content/kendo/kendo.default.min.css",
+                "~/Content/kendo/kendo.default.mobile.min.css",
+                "~/Content/kendo/kendo.common-material.min.css"));
         }
     }
 }

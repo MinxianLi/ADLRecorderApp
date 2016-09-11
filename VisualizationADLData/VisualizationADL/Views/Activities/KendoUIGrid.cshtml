@@ -20,12 +20,12 @@
             columns.Bound(c => c.ActivityDescription);
             columns.Bound(c => c.Latitude);
             columns.Bound(c => c.Longitude);
-            //columns.Command(command => { command.Edit(); }).Width(250);
+            columns.Command(command => { command.Edit(); }).Width(250);
             //columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
         })
         //.ToolBar(toolbar => { toolbar.Create(); toolbar.Excel(); })
         .ToolBar(toolbar => { toolbar.Excel(); })
-        //.Editable(editable => editable.Mode(GridEditMode.InLine))
+        .Editable(editable => editable.Mode(GridEditMode.InLine))
         .HtmlAttributes(new { style = "height: 550px;" })
         .Scrollable()
         .Groupable()
@@ -33,7 +33,7 @@
         .Excel(excel => excel
             .FileName("Kendo UI Grid Export.xlsx")
             .Filterable(true)
-            .ProxyURL(Url.Action("Excel_Export_Save", "Grid"))
+            .ProxyURL(Url.Action("Excel_Export_Save", "Activities"))
         )
         .Pageable(pageable => pageable
             .Input(true)
@@ -54,8 +54,8 @@
             })
             .Read(read => read.Action("Activity_Read", "Activities"))
             //.Create(update => update.Action("Create", "SPReader"))
-            //.Update(update => update.Action("Update", "SPReader"))
-            .PageSize(5)
+            .Update(update => update.Action("Update", "Activities"))
+            .PageSize(10)
         )
 )
 

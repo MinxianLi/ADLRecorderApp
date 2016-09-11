@@ -16,6 +16,7 @@ namespace ContosoSite.Controllers
     public class ActivitiesController : Controller
     {
         private ContosoUniversityDataEntities db = new ContosoUniversityDataEntities();
+        private readonly ContosoUniversityDataEntities dbContext;
 
         // GET: Activities
         public ActionResult Index()
@@ -23,6 +24,21 @@ namespace ContosoSite.Controllers
            // return View(db.Activities.Where(a => a.ActivityName.Contains("Sleeping")).ToList());
             return View(db.Activities.ToList());
         }
+
+        public ContosoUniversityDataEntities DbContext
+        {
+            get
+            {
+                return dbContext;
+            }
+        }
+
+        public ActivitiesController()
+        {
+            dbContext = new ContosoUniversityDataEntities();
+        }
+
+
 
         public ActionResult FilterTable(string activityName, string searchString)
         {
@@ -86,6 +102,78 @@ namespace ContosoSite.Controllers
             return db.Activities.ToList();
 
         }
+
+        [HttpPost]
+        public ActionResult Excel_Export_Save(string contentType, string base64, string fileName)
+        {
+            var fileContents = Convert.FromBase64String(base64);
+            return File(fileContents, contentType, fileName);
+        }
+
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, ActivityViewModel activityViewModel)
+        {
+            //if (activityViewModel != null && this.ModelState.IsValid)
+                if (activityViewModel != null )
+            {
+                activityViewModel.ActivityID = this.SaveData(activityViewModel);
+            }
+
+            return this.Json(new[] { activityViewModel }.ToDataSourceResult(request, ModelState));
+        }
+
+
+
+        private int SaveData(ActivityViewModel activityViewModel)
+        {
+            try
+            {
+               
+                Activity activity = this.DbContext.Activities.FirstOrDefault(i => i.ActivityID == activityViewModel.ActivityID);
+
+                if (activity == null)
+                {
+                    activity = new Activity
+                    {
+                        ActivityID = activityViewModel.ActivityID,
+                        ActivityName = activityViewModel.ActivityName,
+                        ActivityTime = activityViewModel.ActivityTime,
+                        ActivityDescription = activityViewModel.ActivityDescription,
+                        Latitude = activityViewModel.Latitude,
+                        Longitude = activityViewModel.Longtitude,
+                       
+                    };
+
+                    this.DbContext.Activities.Add(activity);
+                    //this.DbContext.GetWeekSchedule(Convert.ToDateTime("2016-09-09")).Where(i => i.Tuesday == weekScheduleModel.Tuesday);
+                }
+                else
+                {
+                    activity.ActivityID = activityViewModel.ActivityID;
+                    activity.ActivityName = activityViewModel.ActivityName;
+                    activity.ActivityTime = activityViewModel.ActivityTime;
+                    activity.ActivityDescription = activityViewModel.ActivityDescription;
+                    activity.Latitude = activityViewModel.Latitude;
+                    activity.Longitude = activityViewModel.Longtitude;
+                    
+                }
+
+                // save change
+                this.DbContext.SaveChanges();
+
+                return activity.ActivityID;
+            }
+            catch (Exception ex)
+            {
+                //this.Logger.Error(ex);
+                throw ex;
+            }
+        }
+
+
+
+
 
 
 
