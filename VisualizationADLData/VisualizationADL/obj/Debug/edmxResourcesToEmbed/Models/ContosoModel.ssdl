@@ -39,21 +39,20 @@
     <Property Name="CourseID" Type="int" Nullable="false" />
     <Property Name="StudentID" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="Record1">
+  <EntityType Name="Record08030822">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="Time" />
+      <PropertyRef Name="ActivityId" />
     </Key>
-    <Property Name="ID" Type="float" Nullable="false" />
+    <Property Name="ActivityId" Type="float" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="255" />
     <Property Name="Location" Type="nvarchar" MaxLength="255" />
     <Property Name="Latitude" Type="float" />
     <Property Name="Longitude" Type="float" />
     <Property Name="Action" Type="nvarchar" MaxLength="255" />
-    <Property Name="Time" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Time" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Student">
     <Key>
       <PropertyRef Name="StudentID" />
@@ -104,19 +103,9 @@ warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a
     <EntitySet Name="Alert" EntityType="Self.Alert" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Record08030822" EntityType="Self.Record08030822" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TotalUser" EntityType="Self.TotalUser" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Record1" EntityType="Self.Record1" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Record1].[ID] AS [ID], 
-    [Record1].[Name] AS [Name], 
-    [Record1].[Location] AS [Location], 
-    [Record1].[Latitude] AS [Latitude], 
-    [Record1].[Longitude] AS [Longitude], 
-    [Record1].[Action] AS [Action], 
-    [Record1].[Time] AS [Time]
-    FROM [dbo].[Record1] AS [Record1]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_dbo_Enrollment_dbo_Course_CourseID" Association="Self.FK_dbo_Enrollment_dbo_Course_CourseID">
       <End Role="Course" EntitySet="Course" />
       <End Role="Enrollment" EntitySet="Enrollment" />

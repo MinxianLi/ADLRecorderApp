@@ -74,7 +74,7 @@
     <EntitySet Name="Alerts" EntityType="ContosoUniversityDataModel.Alert" />
     <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
     <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
-    <EntitySet Name="Record1" EntityType="ContosoUniversityDataModel.Record1" />
+    <EntitySet Name="Record08030822" EntityType="ContosoUniversityDataModel.Record08030822" />
   </EntityContainer>
   <EntityType Name="Alert">
     <Key>
@@ -105,17 +105,16 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="TotalUser1" Type="Int32" />
   </EntityType>
-  <EntityType Name="Record1">
+  <EntityType Name="Record08030822">
     <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="Time" />
+      <PropertyRef Name="ActivityId" />
     </Key>
-    <Property Name="ID" Type="Double" Nullable="false" />
+    <Property Name="ActivityId" Type="Double" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Latitude" Type="Double" />
     <Property Name="Longitude" Type="Double" />
     <Property Name="Action" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="Time" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

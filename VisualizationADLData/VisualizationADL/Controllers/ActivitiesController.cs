@@ -82,9 +82,35 @@ namespace ContosoSite.Controllers
             return Redirect("http://localhost:54107/activitymodels");
         }
 
-        public ActionResult Record1()
+        public ActionResult Record1(string activityName, string searchString)
         {
-            return View(db.Record1.ToList());
+            var activityNameLst = new List<string>();
+
+            var activtyNameQry = from d in db.Record08030822
+                                 orderby d.Action
+                                 select d.Action;
+
+            activityNameLst.AddRange(activtyNameQry.Distinct());
+            ViewBag.activityName = new SelectList(activityNameLst);
+
+            var activities = from a in db.Record08030822
+                             select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    activities = activities.Where(s => s.Action.ToUpper().Contains(searchString.ToUpper())
+                                           || s.Action.ToUpper().Contains(searchString.ToUpper()));
+                }
+            }
+
+            if (!string.IsNullOrEmpty(activityName))
+            {
+                activities = activities.Where(x => x.Action == activityName);
+            }
+
+            return View(activities.ToList());
         }
 
 

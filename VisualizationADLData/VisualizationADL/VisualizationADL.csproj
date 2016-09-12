@@ -248,7 +248,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\PartialClasses.cs" />
-    <Compile Include="Models\Record1.cs">
+    <Compile Include="Models\Record08030822.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">

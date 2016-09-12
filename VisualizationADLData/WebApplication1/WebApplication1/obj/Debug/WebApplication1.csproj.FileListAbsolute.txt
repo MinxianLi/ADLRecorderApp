@@ -357,3 +357,4 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\We
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\WebApplication1\WebApplication1\bin\System.Web.WebPages.Razor.xml
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache

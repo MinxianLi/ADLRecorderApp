@@ -63,16 +63,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Record1">
-      <EntityTypeMapping TypeName="ContosoUniversityDataModel.Record1">
-        <MappingFragment StoreEntitySet="Record1">
+    <EntitySetMapping Name="Record08030822">
+      <EntityTypeMapping TypeName="ContosoUniversityDataModel.Record08030822">
+        <MappingFragment StoreEntitySet="Record08030822">
           <ScalarProperty Name="Time" ColumnName="Time" />
           <ScalarProperty Name="Action" ColumnName="Action" />
           <ScalarProperty Name="Longitude" ColumnName="Longitude" />
           <ScalarProperty Name="Latitude" ColumnName="Latitude" />
           <ScalarProperty Name="Location" ColumnName="Location" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ContosoSite.Models.Record1>
+﻿@model IEnumerable<ContosoSite.Models.Record08030822>
 
 @{
     ViewBag.Title = "Record1";
@@ -7,10 +7,31 @@
 
 <h2>Record1</h2>
 
-<table>
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Activity Name: @Html.DropDownList("activityName", "All") &nbsp &nbsp &nbsp
+        Find by Action Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn-warning btn-md" id="search-button" />
+    </p>
+}
+
+<style>
+    #search-button {
+        margin-left: 40px;
+    }
+</style>
+
+
+
+
+
+<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ID)
+            @Html.DisplayNameFor(model => model.ActivityId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -18,12 +39,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Location)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Latitude)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Longitude)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Action)
         </th>
@@ -37,7 +58,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(model => item.ID)
+                @Html.DisplayFor(model => item.ActivityId)
             </td>
             <td>
                 @Html.DisplayFor(model => item.Name)
@@ -45,12 +66,12 @@
             <td>
                 @Html.DisplayFor(model => item.Location)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(model => item.Latitude)
             </td>
             <td>
                 @Html.DisplayFor(model => item.Longitude)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(model => item.Action)
             </td>
