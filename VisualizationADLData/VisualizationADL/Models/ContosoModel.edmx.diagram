@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="ContosoUniversityDataModel.Alert" Width="1.5" PointX="3.375" PointY="4.75" />
         <EntityTypeShape EntityType="ContosoUniversityDataModel.Activity" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="ContosoUniversityDataModel.TotalUser" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ContosoUniversityDataModel.Record1" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

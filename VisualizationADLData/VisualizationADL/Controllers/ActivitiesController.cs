@@ -82,6 +82,10 @@ namespace ContosoSite.Controllers
             return Redirect("http://localhost:54107/activitymodels");
         }
 
+        public ActionResult Record1()
+        {
+            return View(db.Record1.ToList());
+        }
 
 
 

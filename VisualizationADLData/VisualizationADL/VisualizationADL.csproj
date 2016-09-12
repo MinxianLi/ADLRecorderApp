@@ -248,6 +248,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\PartialClasses.cs" />
+    <Compile Include="Models\Record1.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Student.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
@@ -827,6 +830,7 @@
     <Content Include="Views\Activities\AmBar.cshtml" />
     <Content Include="Views\Activities\FilterTable.cshtml" />
     <Content Include="Views\Activities\KendoUIGrid.cshtml" />
+    <Content Include="Views\Activities\Record1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
