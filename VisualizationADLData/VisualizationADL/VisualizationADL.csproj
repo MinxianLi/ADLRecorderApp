@@ -244,6 +244,9 @@
     <Compile Include="Models\Enrollment.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FinalResult08030822.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metadata.cs" />
@@ -267,8 +270,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image\ADL.png" />
     <Content Include="Content\Image\chatting.png" />
+    <Content Include="Content\Image\drive.png" />
     <Content Include="Content\Image\eating.png" />
+    <Content Include="Content\Image\Music.png" />
+    <Content Include="Content\Image\pc.png" />
     <Content Include="Content\Image\sleeping.png" />
+    <Content Include="Content\Image\walk.png" />
     <Content Include="Content\kendo\kendo.black.min.css" />
     <Content Include="Content\kendo\kendo.black.mobile.min.css" />
     <Content Include="Content\kendo\kendo.blueopal.min.css" />

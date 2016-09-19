@@ -295,17 +295,21 @@ namespace ContosoSite.Controllers
 
         public ActionResult AmPie()
         {
-            ViewBag.ChattingNumber = db.Activities.Where(a => a.ActivityName == "Chatting").Count();
-            ViewBag.EatingNumber = db.Activities.Where(a => a.ActivityName == "Eating").Count();
-            ViewBag.SleepingNumber = db.Activities.Where(a => a.ActivityName == "Sleeping").Count();
+            ViewBag.ChattingNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Chat").Count();
+            ViewBag.MusicNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Music").Count();
+            ViewBag.WalkDeptNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "WalkDept").Count();
+            ViewBag.DrivingNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Driving").Count();
+            ViewBag.WorkingOnPCNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "WorkingOnPC").Count();
             return View();
         }
 
         public ActionResult AmBar()
         {
-            ViewBag.ChattingNumber = db.Activities.Where(a => a.ActivityName == "Chatting").Count();
-            ViewBag.EatingNumber = db.Activities.Where(a => a.ActivityName == "Eating").Count();
-            ViewBag.SleepingNumber = db.Activities.Where(a => a.ActivityName == "Sleeping").Count();
+            ViewBag.ChattingNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Chat").Count();
+            ViewBag.MusicNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Music").Count();
+            ViewBag.WalkDeptNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "WalkDept").Count();
+            ViewBag.DrivingNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "Driving").Count();
+            ViewBag.WorkingOnPCNumber = db.FinalResult08030822.Where(a => a.LabeledAction == "WorkingOnPC").Count();
             return View();
         }
 

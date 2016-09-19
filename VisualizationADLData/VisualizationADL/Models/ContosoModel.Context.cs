@@ -32,5 +32,6 @@ namespace ContosoSite.Models
         public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<TotalUser> TotalUsers { get; set; }
         public virtual DbSet<Record08030822> Record08030822 { get; set; }
+        public virtual DbSet<FinalResult08030822> FinalResult08030822 { get; set; }
     }
 }

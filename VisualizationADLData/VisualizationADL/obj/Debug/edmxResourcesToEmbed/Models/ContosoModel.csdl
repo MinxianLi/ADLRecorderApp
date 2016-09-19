@@ -75,6 +75,7 @@
     <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
     <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
     <EntitySet Name="Record08030822" EntityType="ContosoUniversityDataModel.Record08030822" />
+    <EntitySet Name="FinalResult08030822" EntityType="ContosoUniversityDataModel.FinalResult08030822" />
   </EntityContainer>
   <EntityType Name="Alert">
     <Key>
@@ -116,5 +117,17 @@
     <Property Name="Longitude" Type="Double" />
     <Property Name="Action" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FinalResult08030822">
+    <Key>
+      <PropertyRef Name="ResultID" />
+    </Key>
+    <Property Name="ResultID" Type="Double" Nullable="false" />
+    <Property Name="ChosedAction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Value1" Type="Double" />
+    <Property Name="Value2" Type="Double" />
+    <Property Name="Marker" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TimeRecord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LabeledAction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

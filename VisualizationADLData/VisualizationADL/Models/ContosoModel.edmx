@@ -44,6 +44,18 @@
           <Property Name="CourseID" Type="int" Nullable="false" />
           <Property Name="StudentID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="FinalResult08030822">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="float" Nullable="false" />
+          <Property Name="ChosedAction" Type="nvarchar" MaxLength="255" />
+          <Property Name="Value1" Type="float" />
+          <Property Name="Value2" Type="float" />
+          <Property Name="Marker" Type="nvarchar" MaxLength="255" />
+          <Property Name="TimeRecord" Type="nvarchar" MaxLength="255" />
+          <Property Name="LabeledAction" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="Record08030822">
           <Key>
             <PropertyRef Name="ActivityId" />
@@ -56,8 +68,6 @@
           <Property Name="Action" Type="nvarchar" MaxLength="255" />
           <Property Name="Time" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="StudentID" />
@@ -108,6 +118,7 @@ warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a
           <EntitySet Name="Alert" EntityType="Self.Alert" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinalResult08030822" EntityType="Self.FinalResult08030822" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Record08030822" EntityType="Self.Record08030822" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TotalUser" EntityType="Self.TotalUser" Schema="dbo" store:Type="Tables" />
@@ -199,6 +210,7 @@ warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a
           <EntitySet Name="Activities" EntityType="ContosoUniversityDataModel.Activity" />
           <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
           <EntitySet Name="Record08030822" EntityType="ContosoUniversityDataModel.Record08030822" />
+          <EntitySet Name="FinalResult08030822" EntityType="ContosoUniversityDataModel.FinalResult08030822" />
         </EntityContainer>
         <EntityType Name="Alert">
           <Key>
@@ -240,6 +252,18 @@ warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a
           <Property Name="Longitude" Type="Double" />
           <Property Name="Action" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FinalResult08030822">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="Double" Nullable="false" />
+          <Property Name="ChosedAction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Value1" Type="Double" />
+          <Property Name="Value2" Type="Double" />
+          <Property Name="Marker" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TimeRecord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LabeledAction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -319,6 +343,19 @@ warning 6002: The table/view 'ContosoUniversityData.dbo.Record1' does not have a
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinalResult08030822">
+            <EntityTypeMapping TypeName="ContosoUniversityDataModel.FinalResult08030822">
+              <MappingFragment StoreEntitySet="FinalResult08030822">
+                <ScalarProperty Name="LabeledAction" ColumnName="LabeledAction" />
+                <ScalarProperty Name="TimeRecord" ColumnName="TimeRecord" />
+                <ScalarProperty Name="Marker" ColumnName="Marker" />
+                <ScalarProperty Name="Value2" ColumnName="Value2" />
+                <ScalarProperty Name="Value1" ColumnName="Value1" />
+                <ScalarProperty Name="ChosedAction" ColumnName="ChosedAction" />
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

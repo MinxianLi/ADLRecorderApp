@@ -1,4 +1,4 @@
-﻿@model ContosoSite.Models.Activity
+﻿@model ContosoSite.Models.FinalResult08030822
 
 @{
     ViewBag.Title = "AmBar";
@@ -35,26 +35,32 @@ var chart = AmCharts.makeChart("chartdiv",
         "color": "#7F8DA9",
         "bullet": "@Url.Content("../Content/Image/chatting.png")"
     }, {
-        "name": "Eating",
-        "points": "@ViewBag.EatingNumber",
+        "name": "Music",
+        "points": "@ViewBag.MusicNumber",
         "color": "#FEC514",
-        "bullet": "@Url.Content("../Content/Image/eating.png")"
+        "bullet": "@Url.Content("../Content/Image/Music.png")"
     }, {
-        "name": "Sleeping",
-        "points": "@ViewBag.SleepingNumber",
+        "name": "WalkDept",
+        "points": "@ViewBag.WalkDeptNumber",
         "color": "#DB4C3C",
-        "bullet": "@Url.Content("../Content/Image/sleeping.png")"
+        "bullet": "@Url.Content("../Content/Image/walk.png")"
     },
-    //{
-    //    "name": "Mark",
-    //    "points": 13654,
-    //    "color": "#DAF0FD",
-    //    "bullet": "https://www.amcharts.com/lib/images/faces/E01.png"
-    //}
+    { 
+        "name": "Driving",
+        "points": "@ViewBag.DrivingNumber",
+        "color": "#7ea700",
+        "bullet": "@Url.Content("../Content/Image/drive.png")"
+    },
+    {
+        "name": "WorkingOnPC",
+        "points": "@ViewBag.WorkingOnPCNumber",
+        "color": "#ADD8E6",
+        "bullet": "@Url.Content("../Content/Image/pc.png")"
+    }
     ],
     "valueAxes": [{
         //"maximum": 80000,
-        "maximum": 10,
+        "maximum": 150,
         "minimum": 0,
         "axisAlpha": 0,
         "dashLength": 4,

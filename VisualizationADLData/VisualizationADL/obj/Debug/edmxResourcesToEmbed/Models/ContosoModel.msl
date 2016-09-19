@@ -76,5 +76,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FinalResult08030822">
+      <EntityTypeMapping TypeName="ContosoUniversityDataModel.FinalResult08030822">
+        <MappingFragment StoreEntitySet="FinalResult08030822">
+          <ScalarProperty Name="LabeledAction" ColumnName="LabeledAction" />
+          <ScalarProperty Name="TimeRecord" ColumnName="TimeRecord" />
+          <ScalarProperty Name="Marker" ColumnName="Marker" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="ChosedAction" ColumnName="ChosedAction" />
+          <ScalarProperty Name="ResultID" ColumnName="ResultID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
