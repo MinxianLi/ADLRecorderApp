@@ -126,10 +126,10 @@ namespace ContosoSite.Controllers
             return Json(Get_Activity().ToDataSourceResult(request));
         }
 
-        private static IEnumerable<Activity> Get_Activity()
+        private static IEnumerable<FinalResult08030822> Get_Activity()
         {
             var db = new ContosoUniversityDataEntities();
-            return db.Activities.ToList();
+            return db.FinalResult08030822.ToList();
 
         }
 
@@ -142,57 +142,53 @@ namespace ContosoSite.Controllers
 
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Update([DataSourceRequest] DataSourceRequest request, ActivityViewModel activityViewModel)
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, FinalResultViewModel finalResultViewModel)
         {
             //if (activityViewModel != null && this.ModelState.IsValid)
-                if (activityViewModel != null )
+                if (finalResultViewModel != null )
             {
-                activityViewModel.ActivityID = this.SaveData(activityViewModel);
+                finalResultViewModel.ResultID = this.SaveData(finalResultViewModel);
             }
 
-            return this.Json(new[] { activityViewModel }.ToDataSourceResult(request, ModelState));
+            return this.Json(new[] { finalResultViewModel }.ToDataSourceResult(request, ModelState));
         }
 
 
 
-        private int SaveData(ActivityViewModel activityViewModel)
+        private int SaveData(FinalResultViewModel finalResultViewModel)
         {
             try
             {
                
-                Activity activity = this.DbContext.Activities.FirstOrDefault(i => i.ActivityID == activityViewModel.ActivityID);
+                FinalResult08030822 finalResult08030822 = this.DbContext.FinalResult08030822.FirstOrDefault(i => i.ResultID == finalResultViewModel.ResultID);
 
-                if (activity == null)
+                if (finalResult08030822 == null)
                 {
-                    activity = new Activity
+                    finalResult08030822 = new FinalResult08030822
                     {
-                        ActivityID = activityViewModel.ActivityID,
-                        ActivityName = activityViewModel.ActivityName,
-                        ActivityTime = activityViewModel.ActivityTime,
-                        ActivityDescription = activityViewModel.ActivityDescription,
-                        Latitude = activityViewModel.Latitude,
-                        Longitude = activityViewModel.Longtitude,
-                       
+                        ResultID = finalResultViewModel.ResultID,
+                        ChosedAction = finalResultViewModel.ChosedAction,
+                        TimeRecord = finalResultViewModel.TimeRecord,
+                        LabeledAction = finalResultViewModel.LabeledAction,      
                     };
 
-                    this.DbContext.Activities.Add(activity);
+                    this.DbContext.FinalResult08030822.Add(finalResult08030822);
                     //this.DbContext.GetWeekSchedule(Convert.ToDateTime("2016-09-09")).Where(i => i.Tuesday == weekScheduleModel.Tuesday);
                 }
                 else
                 {
-                    activity.ActivityID = activityViewModel.ActivityID;
-                    activity.ActivityName = activityViewModel.ActivityName;
-                    activity.ActivityTime = activityViewModel.ActivityTime;
-                    activity.ActivityDescription = activityViewModel.ActivityDescription;
-                    activity.Latitude = activityViewModel.Latitude;
-                    activity.Longitude = activityViewModel.Longtitude;
+                    finalResult08030822.ResultID = finalResultViewModel.ResultID;
+                    finalResult08030822.ChosedAction = finalResultViewModel.ChosedAction;
+                    finalResult08030822.TimeRecord = finalResultViewModel.TimeRecord;
+                    finalResult08030822.LabeledAction = finalResultViewModel.LabeledAction;
+                   
                     
                 }
 
                 // save change
                 this.DbContext.SaveChanges();
 
-                return activity.ActivityID;
+                return Convert.ToInt32(finalResult08030822.ResultID);
             }
             catch (Exception ex)
             {

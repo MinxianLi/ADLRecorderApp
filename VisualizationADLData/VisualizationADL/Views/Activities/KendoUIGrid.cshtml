@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ContosoSite.Models.Activity>
+﻿@model IEnumerable<ContosoSite.Models.FinalResult08030822>
 
 @{
     ViewBag.Title = "KendoUIGrid";
@@ -10,14 +10,14 @@
 
 
 
-@(Html.Kendo().Grid<ContosoSite.Models.Activity>()
+@(Html.Kendo().Grid<ContosoSite.Models.FinalResult08030822>()
         .Name("grid")
         .Columns(columns =>
         {
-            columns.Bound(c => c.ActivityID);
-            columns.Bound(c => c.ActivityName);
-            columns.Bound(c => c.ActivityTime);
-            columns.Bound(c => c.ActivityDescription);
+            columns.Bound(c => c.ResultID).Width(90);
+            columns.Bound(c => c.ChosedAction).Width(180);
+            columns.Bound(c => c.TimeRecord).Width(300);
+            columns.Bound(c => c.LabeledAction);
             //columns.Bound(c => c.Latitude);
             //columns.Bound(c => c.Longitude);
             columns.Command(command => { command.Edit(); }).Width(250);
@@ -48,9 +48,10 @@
             .Ajax()
             .Model(model =>
             {
-                model.Id(p => p.ActivityID);
-                //model.Field(p => p.ValueStreamId).Editable(false);
-                //model.Field(p => p.Name).Editable(false);
+                model.Id(p => p.ResultID);
+                model.Field(p => p.ResultID).Editable(false);
+                model.Field(p => p.ChosedAction).Editable(false);
+                model.Field(p => p.TimeRecord).Editable(false);
             })
             .Read(read => read.Action("Activity_Read", "Activities"))
             //.Create(update => update.Action("Create", "SPReader"))
@@ -97,6 +98,10 @@ color: white;
 <style>
     html .k-grid tr:hover {
         background: #7ea700;
-        color: white;
+        color: black;
+    }
+
+    html .k-grid .k-header k-link{
+        text-align: center;
     }
 </style>
