@@ -110,6 +110,12 @@ namespace ContosoSite.Controllers
                 activities = activities.Where(x => x.Action == activityName);
             }
 
+
+
+
+            string searchString222 = "Still";
+            ViewBag.AnyNumber = db.Record08030822.Where(s => s.Action.Contains(searchString222)).Count();
+
             return View(activities.ToList());
         }
 
@@ -309,6 +315,15 @@ namespace ContosoSite.Controllers
             return View();
         }
 
+        public ActionResult AmLine()
+        {
+            return View();
+        }
+
+        public ActionResult Animation()
+        {
+            return View();
+        }
 
 
         public ActionResult KendoUI()

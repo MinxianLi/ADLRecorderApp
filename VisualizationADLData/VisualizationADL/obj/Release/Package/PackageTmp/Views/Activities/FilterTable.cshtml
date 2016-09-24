@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ContosoSite.Models.Activity>
+
+@{
+    ViewBag.Title = "FilterTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FilterTable</h2>
+
+
+<div id="display_table4">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            Activity Name: @Html.DropDownList("activityName", "All") &nbsp &nbsp &nbsp
+            Find by Activity Name or Description: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" class="btn-warning btn-md" id="search-button" />
+        </p>
+    }
+
+    <style>
+        #search-button {
+            margin-left: 40px
+        }
+    </style>
+
+    <table class="table">
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityName)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActivityDescription)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info btn-lg" onclick="location.href='@Url.Action("Map", "Activities")'">
+                        <span class="glyphicon glyphicon-map-marker"></span> Map
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityName)
+                </td>
+                <td data-toggle="modal" data-target="#myModal">
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityDescription)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success btn-md">@Html.ActionLink("Edit", "Edit", new { id = item.ActivityID })  </button> |
+                    <button type="button" class="btn btn-info btn-md">@Html.ActionLink("Details", "Details", new { id = item.ActivityID }) </button> |
+                    <button type="button" class="btn btn-danger btn-md">@Html.ActionLink("Delete", "Delete", new { id = item.ActivityID })</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
