@@ -16,12 +16,27 @@
 </style>
 
 <!-- Resources -->
-<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+@*<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
 <script src="https://www.amcharts.com/lib/3/amstock.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>*@
+
+
+
+
+<script src="~/Scripts/amcharts/amcharts.js"></script>
+<script src="~/Scripts/amcharts/serial.js"></script>
+<script src="~/Scripts/amcharts/amstock.js"></script>
+<script src="~/Scripts/amcharts/export.min.js"></script>
+<link rel="stylesheet" href="~/Content/amcharts/export.css" type="text/css" media="all" />
+<script src="~/Scripts/amcharts/light.js"></script>
+<script src="~/Scripts/amcharts/fabric.min.js"></script>
+<script src="~/Scripts/amcharts/FileSaver.min.js"></script>
+<script src="~/Scripts/amcharts/pdfmake.min.js"></script>
+<script src="~/Scripts/amcharts/xlsx.min.js"></script>
+@Html.Raw(File.ReadAllText(Server.MapPath("~/Scripts/amcharts/dragIconRoundBig.svg")))
 
 <!-- Chart code -->
 <script>

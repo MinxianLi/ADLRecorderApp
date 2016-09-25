@@ -113,8 +113,47 @@ namespace ContosoSite.Controllers
 
 
 
-            string searchString222 = "Still";
-            ViewBag.AnyNumber = db.Record08030822.Where(s => s.Action.Contains(searchString222)).Count();
+            
+            ViewBag.MovingconstantlyNumber = db.Record08030822.Where(s => s.Action.Contains("Moving constantly")).Count();
+
+            ViewBag.andThenDimmerNumber = db.Record08030822.Where(s => s.Action.Contains("and Then Dimmer")).Count();
+
+            ViewBag.SameplaceNumber = db.Record08030822.Where(s => s.Action.Contains("Same place")).Count();
+
+            ViewBag.WatchingphoneNumber = db.Record08030822.Where(s => s.Action.Contains("Watching phone")).Count();
+
+            ViewBag.SittingNumber = db.Record08030822.Where(s => s.Action.Contains("Sitting")).Count();
+
+            ViewBag.StillNumber = db.Record08030822.Where(s => s.Action.Contains("Still")).Count();
+
+            ViewBag.DimmerNumber = db.Record08030822.Where(s => s.Action.Contains("Dimmer")).Count();
+
+            ViewBag.WorkingNumber = db.Record08030822.Where(s => s.Action.Contains("Working")).Count();
+
+            ViewBag.movingslightlyNumber = db.Record08030822.Where(s => s.Action.Contains("Moving slightly")).Count();
+
+            ViewBag.WashingNumber = db.Record08030822.Where(s => s.Action.Contains("Washing")).Count();
+
+            ViewBag.andthenlightfluctuatingNumber = db.Record08030822.Where(s => s.Action.Contains("and then light fluctuating")).Count();
+
+            ViewBag.andthenstrongbrightnessNumber = db.Record08030822.Where(s => s.Action.Contains("and then Strong brightness")).Count();
+
+            ViewBag.NormalbrightnessNumber = db.Record08030822.Where(s => s.Action.Contains("Normal brightness")).Count();
+
+            ViewBag.MealNumber = db.Record08030822.Where(s => s.Action.Contains("Meal")).Count();
+
+            ViewBag.the18stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("18 steps forward")).Count();
+
+            ViewBag.andthen8stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("and then 8 steps forward")).Count();
+
+            ViewBag.andthen5stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("and then 5 steps forward")).Count();
+
+            ViewBag.andthen23stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("and then 23 steps forward")).Count();
+
+            ViewBag.andthen6stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("and then 6 steps forward")).Count();
+
+            ViewBag.andthen48stepsforwardNumber = db.Record08030822.Where(s => s.Action.Contains("and then 48 steps forward")).Count();
+
 
             return View(activities.ToList());
         }
