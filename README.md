@@ -6,4 +6,4 @@ How to Run the APP:
 Using your Visual Studio 2015 to open ADLRecorderApp.sln under ADLRecorderApp folder.
 
 (Last updated on August 9, 2016)
-Fix error: When you checkout ContosoUniversityData solution, delete "packages" folder, then rebuild t. Refer to this one: http://stackoverflow.com/questions/32150204/buildtasks-csc-task-could-not-be-loaded-from-the-assembly
+Fix error: When you checkout VisualizationADLData solution, delete "packages" folder, then rebuild t. Refer to this one: http://stackoverflow.com/questions/32150204/buildtasks-csc-task-could-not-be-loaded-from-the-assembly
