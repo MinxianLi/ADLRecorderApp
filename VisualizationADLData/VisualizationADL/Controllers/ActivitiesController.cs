@@ -166,6 +166,12 @@ namespace ContosoSite.Controllers
             return View();
         }
 
+
+        public ActionResult WorkMap()
+        {
+            return View();
+        }
+
         public ActionResult Activity_Read([DataSourceRequest]DataSourceRequest request)
         {
             return Json(Get_Activity().ToDataSourceResult(request));
