@@ -391,6 +391,8 @@ namespace ContosoSite.Controllers
             return View();
         }
 
+       
+
         public ActionResult Ajax()
         {
             return Content("success");
