@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="minxianli-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\MinxianLi\\Desktop\\ADLRecorderApp\\ADLRecorderApp\\VisualizationADLData\\VisualizationADL\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\MinxianLi\\Desktop\\ADLRecorderApp\\ADLRecorderApp\\VisualizationADLData\\VisualizationADL\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="ContosoUniversityDataEntities-Web.config Connection String" description="" value="metadata=res://*/Models.ContosoModel.csdl|res://*/Models.ContosoModel.ssdl|res://*/Models.ContosoModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=sql5030.smarterasp.net;initial catalog=DB_A1060C_minxianli;User Id=DB_A1060C_minxianli_admin;Password=liminxian423;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\MinxianLi\\Desktop\\ADLRecorderApp\\ADLRecorderApp\\VisualizationADLData\\VisualizationADL\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ContosoUniversityDataEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=sql5030.smarterasp.net;Initial Catalog=DB_A1060C_minxianli;Persist Security Info=True;User ID=DB_A1060C_minxianli_admin;Password=liminxian423" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\MinxianLi\\Desktop\\ADLRecorderApp\\ADLRecorderApp\\VisualizationADLData\\VisualizationADL\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -281,6 +281,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\back.png" />
+    <Content Include="Content\images\kendoui.svg" />
+    <Content Include="Content\images\wp8_icons.png" />
+    <Content Include="Content\images\wp8_inverseicons.png" />
     <Content Include="Content\Image\ADL.png" />
     <Content Include="Content\Image\chatting.png" />
     <Content Include="Content\Image\drive.png" />
@@ -588,6 +592,10 @@
     <Content Include="Content\kendo\kendo.silver.mobile.min.css.map" />
     <Content Include="Content\kendo\kendo.uniform.min.css.map" />
     <Content Include="Content\kendo\kendo.uniform.mobile.min.css.map" />
+    <Content Include="Content\images\kendoui.ttf" />
+    <Content Include="Content\images\kendoui.woff" />
+    <None Include="Properties\PublishProfiles\Default Settings %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Properties\PublishProfiles\VisualizationADL - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />

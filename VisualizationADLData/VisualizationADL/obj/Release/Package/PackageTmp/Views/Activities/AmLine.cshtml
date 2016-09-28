@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewBag.Title = "AmLine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AmLine</h2>
+
+
+<!-- Styles -->
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
+<!-- Resources -->
+@*<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/amstock.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>*@
+
+
+
+
+<script src="~/Scripts/amcharts/amcharts.js"></script>
+<script src="~/Scripts/amcharts/serial.js"></script>
+<script src="~/Scripts/amcharts/amstock.js"></script>
+<script src="~/Scripts/amcharts/export.min.js"></script>
+<link rel="stylesheet" href="~/Content/amcharts/export.css" type="text/css" media="all" />
+<script src="~/Scripts/amcharts/light.js"></script>
+<script src="~/Scripts/amcharts/fabric.min.js"></script>
+<script src="~/Scripts/amcharts/FileSaver.min.js"></script>
+<script src="~/Scripts/amcharts/pdfmake.min.js"></script>
+<script src="~/Scripts/amcharts/xlsx.min.js"></script>
+@Html.Raw(File.ReadAllText(Server.MapPath("~/Scripts/amcharts/dragIconRoundBig.svg")))
+
+<!-- Chart code -->
+<script>
+//var chartData = generateChartData();
+
+//function generateChartData() {
+//  var chartData = [];
+//  var firstDate = new Date();
+//  firstDate.setDate( firstDate.getDate());
+//  firstDate.setHours( 0, 0, 0, 0 );
+
+//  for ( var i = 0; i < 1000; i++ ) {
+//    var newDate = new Date( firstDate );
+//    newDate.setHours( 0, i, 0, 0 );
+
+//    var a = Math.round( Math.random() * ( 40 + i ) ) + 100 + i;
+//    var b = Math.round( Math.random() * 100000000 );
+
+//    chartData.push( {
+//      "date": newDate,
+//      "value": a,
+//      "volume": b
+//    } );
+//  }
+//  return chartData;
+//}
+
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "stock",
+  "theme": "light",
+  "categoryAxesSettings": {
+    "minPeriod": "mm"
+  },
+
+  "dataSets": [ {
+    "color": "#b0de09",
+    "fieldMappings": [ {
+      "fromField": "value",
+      "toField": "value"
+    }, {
+      "fromField": "volume",
+      "toField": "volume"
+    } ],
+
+      //"dataProvider": chartData,
+
+    "dataProvider": [{
+        "date": "2016-09-23 15:00:00",
+        "value": 5,
+        "value1": 20,
+        "volume": 10
+    }, {
+        "date": "2016-09-23 15:01:00",
+        "value": 10,
+        "test1": 2,
+        "volume": 20
+    }],
+
+    "categoryField": "date"
+  } ],
+
+  "panels": [ {
+    "showCategoryAxis": false,
+    "title": "Value",
+    "percentHeight": 70,
+
+    "stockGraphs": [ {
+      "id": "g1",
+      "valueField": "value",
+      "type": "smoothedLine",
+      "lineThickness": 2,
+      "bullet": "round"
+    } ],
+
+
+    "stockLegend": {
+      "valueTextRegular": " ",
+      "markerType": "none"
+    }
+  }, {
+    "title": "Volume",
+    "percentHeight": 30,
+    "stockGraphs": [ {
+      "valueField": "volume",
+      "type": "column",
+      "cornerRadiusTop": 2,
+      "fillAlphas": 1
+    } ],
+
+    "stockLegend": {
+      "valueTextRegular": " ",
+      "markerType": "none"
+    }
+  } ],
+
+  "chartScrollbarSettings": {
+    "graph": "g1",
+    "usePeriod": "10mm",
+    "position": "top"
+  },
+
+  "chartCursorSettings": {
+    "valueBalloonsEnabled": true
+  },
+
+  "periodSelector": {
+    "position": "top",
+    "dateFormat": "YYYY-MM-DD JJ:NN",
+    "inputFieldWidth": 150,
+    "periods": [ {
+      "period": "hh",
+      "count": 1,
+      "label": "1 hour",
+      "selected": true
+    }, {
+      "period": "hh",
+      "count": 2,
+      "label": "2 hours"
+    }, {
+      "period": "hh",
+      "count": 5,
+      "label": "5 hour"
+    }, {
+      "period": "hh",
+      "count": 12,
+      "label": "12 hours"
+    }, {
+      "period": "MAX",
+      "label": "MAX"
+    } ]
+  },
+
+  "panelsSettings": {
+    "usePrefixes": true
+  },
+
+  "export": {
+    "enabled": true,
+    "position": "bottom-right"
+  }
+} );
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>	

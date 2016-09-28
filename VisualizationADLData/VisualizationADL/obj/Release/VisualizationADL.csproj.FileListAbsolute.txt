@@ -106,3 +106,4 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\Vi
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADL\obj\Release\ContosoSite.pdb
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADL\bin\Microsoft.ApplicationInsights.TraceListener.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADL\bin\Microsoft.ApplicationInsights.TraceListener.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADL\bin\Jmelosegui.Mvc.GoogleMap.dll
