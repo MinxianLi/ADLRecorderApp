@@ -5,10 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Record1</h2>
 
 
 
+<div class="alert alert-info" role="alert">
+    <h2>Pie Chart for Action Record Data 08032016-08222016</h2>
+</div>
 
 
 
@@ -113,6 +115,18 @@
         }, {
             "country": "and then 8 steps forward",
             "litres": "@ViewBag.andthen8stepsforwardNumber"
+        },{
+            "country": "and then 5 steps forward",
+            "litres": "@ViewBag.andthen5stepsforwardNumber"
+        }, {
+            "country": "and then 23 steps forward",
+            "litres": "@ViewBag.andthen23stepsforwardNumber"
+        },{
+            "country": "and then 6 steps forward",
+            "litres": "@ViewBag.andthen6stepsforwardNumber"
+        }, {
+            "country": "and then 48 steps forward",
+            "litres": "@ViewBag.andthen48stepsforwardNumber"
         }
 
 
@@ -139,6 +153,299 @@
         wedge.parentNode.appendChild(wedge);
     }
 </script>
+
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<hr />
+
+<div class="alert alert-success" role="alert">
+    <h2>Pie Chart for Moving Record - Category 1</h2>
+</div>
+<div id="chartdiv2"></div>
+
+
+<script>
+    var chart2 = AmCharts.makeChart("chartdiv2", {
+        "type": "pie",
+        "startDuration": 0,
+        "theme": "light",
+        "addClassNames": true,
+        "legend": {
+            "position": "right",
+            "marginRight": 100,
+            "autoMargins": false
+        },
+        "innerRadius": "30%",
+        "defs": {
+            "filter": [{
+                "id": "shadow",
+                "width": "200%",
+                "height": "200%",
+                "feOffset": {
+                    "result": "offOut",
+                    "in": "SourceAlpha",
+                    "dx": 0,
+                    "dy": 0
+                },
+                "feGaussianBlur": {
+                    "result": "blurOut",
+                    "in": "offOut",
+                    "stdDeviation": 5
+                },
+                "feBlend": {
+                    "in": "SourceGraphic",
+                    "in2": "blurOut",
+                    "mode": "normal"
+                }
+            }]
+        },
+        "dataProvider": [{
+            "country": "Moving constantly",
+            "litres": "@ViewBag.MovingconstantlyNumber"
+            //   "country": "Lithuania",
+            // "litres": 501.9
+        }, {
+            "country": "Same place",
+            "litres": "@ViewBag.SameplaceNumber"
+            //"country": "Ireland",
+            // "litres": 201.1
+        }, {
+            "country": "Moving slightly",
+            "litres": "@ViewBag.movingslightlyNumber"
+        }, {
+            "country": "18 steps forward",
+            "litres": "@ViewBag.the18stepsforwardNumber"
+        }, {
+            "country": "Sitting",
+            "litres": "@ViewBag.SittingNumber"
+        }, {
+            "country": "and then 8 steps forward",
+            "litres": "@ViewBag.andthen8stepsforwardNumber"
+        },{
+            "country": "and then 5 steps forward",
+        "litres": "@ViewBag.andthen5stepsforwardNumber"
+        }, {
+        "country": "and then 23 steps forward",
+        "litres": "@ViewBag.andthen23stepsforwardNumber"
+         },{
+        "country": "and then 6 steps forward",
+        "litres": "@ViewBag.andthen6stepsforwardNumber"
+        }, {
+        "country": "and then 48 steps forward",
+        "litres": "@ViewBag.andthen48stepsforwardNumber"
+        }
+
+
+        ],
+        "valueField": "litres",
+        "titleField": "country",
+        "export": {
+            "enabled": true
+        }
+    });
+
+    chart2.addListener("init", handleInit);
+
+    chart2.addListener("rollOverSlice", function (e) {
+        handleRollOver(e);
+    });
+
+    function handleInit() {
+        chart2.legend.addListener("rollOverItem", handleRollOver);
+    }
+
+    function handleRollOver(e) {
+        var wedge = e.dataItem.wedge.node;
+        wedge.parentNode.appendChild(wedge);
+    }
+</script>
+
+
+
+
+
+<hr />
+
+<div class="alert alert-warning" role="alert">
+    <h2>Pie Chart for Light Record - Category 2</h2>
+</div>
+<div id="chartdiv3"></div>
+
+
+<script>
+    var chart3 = AmCharts.makeChart("chartdiv3", {
+        "type": "pie",
+        "startDuration": 0,
+        "theme": "light",
+        "addClassNames": true,
+        "legend": {
+            "position": "right",
+            "marginRight": 100,
+            "autoMargins": false
+        },
+        "innerRadius": "30%",
+        "defs": {
+            "filter": [{
+                "id": "shadow",
+                "width": "200%",
+                "height": "200%",
+                "feOffset": {
+                    "result": "offOut",
+                    "in": "SourceAlpha",
+                    "dx": 0,
+                    "dy": 0
+                },
+                "feGaussianBlur": {
+                    "result": "blurOut",
+                    "in": "offOut",
+                    "stdDeviation": 5
+                },
+                "feBlend": {
+                    "in": "SourceGraphic",
+                    "in2": "blurOut",
+                    "mode": "normal"
+                }
+            }]
+        },
+        "dataProvider": [{
+            "country": "and Then Dimmer",
+            "litres": "@ViewBag.andThenDimmerNumber"
+            // "country": "Czech Republic",
+            //  "litres": 301.9
+        },{
+            "country": "Dimmer",
+            "litres": "@ViewBag.DimmerNumber"
+        },  {
+            "country": "and then light fluctuating",
+            "litres": "@ViewBag.andthenlightfluctuatingNumber"
+        }, {
+            "country": "and then Strong brightness",
+            "litres": "@ViewBag.andthenstrongbrightnessNumber"
+        }, {
+            "country": "Normal brightness",
+            "litres": "@ViewBag.NormalbrightnessNumber"
+        }
+
+        ],
+        "valueField": "litres",
+        "titleField": "country",
+        "export": {
+            "enabled": true
+        }
+    });
+
+    chart3.addListener("init", handleInit);
+
+    chart3.addListener("rollOverSlice", function (e) {
+        handleRollOver(e);
+    });
+
+    function handleInit() {
+        chart3.legend.addListener("rollOverItem", handleRollOver);
+    }
+
+    function handleRollOver(e) {
+        var wedge = e.dataItem.wedge.node;
+        wedge.parentNode.appendChild(wedge);
+    }
+</script>
+
+
+
+
+
+<hr />
+
+<div class="alert alert-danger" role="alert">
+    <h2>Pie Chart for Action - Category 3</h2>
+</div>
+<div id="chartdiv4"></div>
+
+
+
+
+<script>
+    var chart4 = AmCharts.makeChart("chartdiv4", {
+        "type": "pie",
+        "startDuration": 0,
+        "theme": "light",
+        "addClassNames": true,
+        "legend": {
+            "position": "right",
+            "marginRight": 100,
+            "autoMargins": false
+        },
+        "innerRadius": "30%",
+        "defs": {
+            "filter": [{
+                "id": "shadow",
+                "width": "200%",
+                "height": "200%",
+                "feOffset": {
+                    "result": "offOut",
+                    "in": "SourceAlpha",
+                    "dx": 0,
+                    "dy": 0
+                },
+                "feGaussianBlur": {
+                    "result": "blurOut",
+                    "in": "offOut",
+                    "stdDeviation": 5
+                },
+                "feBlend": {
+                    "in": "SourceGraphic",
+                    "in2": "blurOut",
+                    "mode": "normal"
+                }
+            }]
+        },
+        "dataProvider": [{
+            "country": "Watching phone",
+            "litres": "@ViewBag.WatchingphoneNumber"
+        }, {
+            "country": "Working",
+            "litres": "@ViewBag.WorkingNumber"
+        }, {
+            "country": "Washing",
+            "litres": "@ViewBag.WashingNumber"
+        }, {
+            "country": "Meal",
+            "litres": "@ViewBag.MealNumber"
+        },
+
+
+        ],
+        "valueField": "litres",
+        "titleField": "country",
+        "export": {
+            "enabled": true
+        }
+    });
+
+    chart4.addListener("init", handleInit);
+
+    chart4.addListener("rollOverSlice", function (e) {
+        handleRollOver(e);
+    });
+
+    function handleInit() {
+        chart4.legend.addListener("rollOverItem", handleRollOver);
+    }
+
+    function handleRollOver(e) {
+        var wedge = e.dataItem.wedge.node;
+        wedge.parentNode.appendChild(wedge);
+    }
+</script>
+
+
+
 
 <style>
     #chartdiv {
@@ -175,13 +482,90 @@
 
 
 
+<style>
+    #chartdiv2 {
+        width: 100%;
+        height: 500px;
+        font-size: 11px;
+    }
+
+    .amcharts-pie-slice {
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition-duration: 0.3s;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        cursor: pointer;
+        box-shadow: 0 0 30px 0 #000;
+    }
+
+        .amcharts-pie-slice:hover {
+            transform: scale(1.1);
+            filter: url(#shadow);
+        }
+</style>
 
 
 
 
 
+<style>
+    #chartdiv3 {
+        width: 100%;
+        height: 500px;
+        font-size: 11px;
+    }
+
+    .amcharts-pie-slice {
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition-duration: 0.3s;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        cursor: pointer;
+        box-shadow: 0 0 30px 0 #000;
+    }
+
+        .amcharts-pie-slice:hover {
+            transform: scale(1.1);
+            filter: url(#shadow);
+        }
+</style>
 
 
+
+<style>
+    #chartdiv4 {
+        width: 100%;
+        height: 500px;
+        font-size: 11px;
+    }
+
+    .amcharts-pie-slice {
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition-duration: 0.3s;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        cursor: pointer;
+        box-shadow: 0 0 30px 0 #000;
+    }
+
+        .amcharts-pie-slice:hover {
+            transform: scale(1.1);
+            filter: url(#shadow);
+        }
+</style>
+
+
+
+<hr />
 
 @using (Html.BeginForm())
 {
