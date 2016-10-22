@@ -12,6 +12,8 @@ namespace ContosoSite.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ContosoUniversityDataEntities : DbContext
     {
@@ -33,5 +35,103 @@ namespace ContosoSite.Models
         public virtual DbSet<TotalUser> TotalUsers { get; set; }
         public virtual DbSet<Record08030822> Record08030822 { get; set; }
         public virtual DbSet<FinalResult08030822> FinalResult08030822 { get; set; }
+        public virtual DbSet<Paste> Pastes { get; set; }
+    
+        public virtual int CopyPaste(Nullable<int> id, Nullable<double> light, Nullable<double> xAcce, Nullable<double> yAcce, Nullable<double> zAcce, Nullable<double> angle, Nullable<double> azimuth, Nullable<double> pitch, Nullable<double> roll, Nullable<double> latitude, Nullable<double> longtitude, Nullable<double> altitude, Nullable<double> hour, Nullable<double> moving, Nullable<double> turning, Nullable<double> lightChanging, Nullable<double> dark, Nullable<double> accel, Nullable<double> status, Nullable<double> screenOn, Nullable<double> earPlug, Nullable<double> sound, string activity)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var lightParameter = light.HasValue ?
+                new ObjectParameter("light", light) :
+                new ObjectParameter("light", typeof(double));
+    
+            var xAcceParameter = xAcce.HasValue ?
+                new ObjectParameter("xAcce", xAcce) :
+                new ObjectParameter("xAcce", typeof(double));
+    
+            var yAcceParameter = yAcce.HasValue ?
+                new ObjectParameter("yAcce", yAcce) :
+                new ObjectParameter("yAcce", typeof(double));
+    
+            var zAcceParameter = zAcce.HasValue ?
+                new ObjectParameter("zAcce", zAcce) :
+                new ObjectParameter("zAcce", typeof(double));
+    
+            var angleParameter = angle.HasValue ?
+                new ObjectParameter("angle", angle) :
+                new ObjectParameter("angle", typeof(double));
+    
+            var azimuthParameter = azimuth.HasValue ?
+                new ObjectParameter("azimuth", azimuth) :
+                new ObjectParameter("azimuth", typeof(double));
+    
+            var pitchParameter = pitch.HasValue ?
+                new ObjectParameter("pitch", pitch) :
+                new ObjectParameter("pitch", typeof(double));
+    
+            var rollParameter = roll.HasValue ?
+                new ObjectParameter("roll", roll) :
+                new ObjectParameter("roll", typeof(double));
+    
+            var latitudeParameter = latitude.HasValue ?
+                new ObjectParameter("latitude", latitude) :
+                new ObjectParameter("latitude", typeof(double));
+    
+            var longtitudeParameter = longtitude.HasValue ?
+                new ObjectParameter("longtitude", longtitude) :
+                new ObjectParameter("longtitude", typeof(double));
+    
+            var altitudeParameter = altitude.HasValue ?
+                new ObjectParameter("altitude", altitude) :
+                new ObjectParameter("altitude", typeof(double));
+    
+            var hourParameter = hour.HasValue ?
+                new ObjectParameter("hour", hour) :
+                new ObjectParameter("hour", typeof(double));
+    
+            var movingParameter = moving.HasValue ?
+                new ObjectParameter("moving", moving) :
+                new ObjectParameter("moving", typeof(double));
+    
+            var turningParameter = turning.HasValue ?
+                new ObjectParameter("turning", turning) :
+                new ObjectParameter("turning", typeof(double));
+    
+            var lightChangingParameter = lightChanging.HasValue ?
+                new ObjectParameter("lightChanging", lightChanging) :
+                new ObjectParameter("lightChanging", typeof(double));
+    
+            var darkParameter = dark.HasValue ?
+                new ObjectParameter("dark", dark) :
+                new ObjectParameter("dark", typeof(double));
+    
+            var accelParameter = accel.HasValue ?
+                new ObjectParameter("accel", accel) :
+                new ObjectParameter("accel", typeof(double));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(double));
+    
+            var screenOnParameter = screenOn.HasValue ?
+                new ObjectParameter("screenOn", screenOn) :
+                new ObjectParameter("screenOn", typeof(double));
+    
+            var earPlugParameter = earPlug.HasValue ?
+                new ObjectParameter("earPlug", earPlug) :
+                new ObjectParameter("earPlug", typeof(double));
+    
+            var soundParameter = sound.HasValue ?
+                new ObjectParameter("sound", sound) :
+                new ObjectParameter("sound", typeof(double));
+    
+            var activityParameter = activity != null ?
+                new ObjectParameter("activity", activity) :
+                new ObjectParameter("activity", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CopyPaste", idParameter, lightParameter, xAcceParameter, yAcceParameter, zAcceParameter, angleParameter, azimuthParameter, pitchParameter, rollParameter, latitudeParameter, longtitudeParameter, altitudeParameter, hourParameter, movingParameter, turningParameter, lightChangingParameter, darkParameter, accelParameter, statusParameter, screenOnParameter, earPlugParameter, soundParameter, activityParameter);
+        }
     }
 }

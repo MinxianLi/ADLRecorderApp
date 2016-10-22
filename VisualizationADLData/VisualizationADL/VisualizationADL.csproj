@@ -220,6 +220,7 @@
     <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PasteController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -262,6 +263,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Models\PartialClasses.cs" />
+    <Compile Include="Models\Paste.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Record08030822.cs">
       <DependentUpon>ContosoModel.tt</DependentUpon>
     </Compile>
@@ -1101,6 +1105,7 @@
     <Content Include="Views\Activities\AmLine.cshtml" />
     <Content Include="Views\Activities\Animation.cshtml" />
     <Content Include="Views\Activities\WorkMap.cshtml" />
+    <Content Include="Views\Paste\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

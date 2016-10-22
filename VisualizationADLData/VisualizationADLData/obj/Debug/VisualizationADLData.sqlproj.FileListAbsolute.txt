@@ -12,3 +12,7 @@ C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\Vi
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\bin\Debug\ContosoUniversityData.pdb
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\ContosoUniversityData.dll
 C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\ContosoUniversityData.pdb
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\Model.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\refactor.xml
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\postdeploy.sql
+C:\Users\MinxianLi\Desktop\ADLRecorderApp\ADLRecorderApp\VisualizationADLData\VisualizationADLData\obj\Debug\predeploy.sql

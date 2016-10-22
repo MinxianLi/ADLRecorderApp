@@ -76,6 +76,32 @@
     <EntitySet Name="TotalUsers" EntityType="ContosoUniversityDataModel.TotalUser" />
     <EntitySet Name="Record08030822" EntityType="ContosoUniversityDataModel.Record08030822" />
     <EntitySet Name="FinalResult08030822" EntityType="ContosoUniversityDataModel.FinalResult08030822" />
+    <FunctionImport Name="CopyPaste">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="light" Mode="In" Type="Double" />
+      <Parameter Name="xAcce" Mode="In" Type="Double" />
+      <Parameter Name="yAcce" Mode="In" Type="Double" />
+      <Parameter Name="zAcce" Mode="In" Type="Double" />
+      <Parameter Name="angle" Mode="In" Type="Double" />
+      <Parameter Name="azimuth" Mode="In" Type="Double" />
+      <Parameter Name="pitch" Mode="In" Type="Double" />
+      <Parameter Name="roll" Mode="In" Type="Double" />
+      <Parameter Name="latitude" Mode="In" Type="Double" />
+      <Parameter Name="longtitude" Mode="In" Type="Double" />
+      <Parameter Name="altitude" Mode="In" Type="Double" />
+      <Parameter Name="hour" Mode="In" Type="Double" />
+      <Parameter Name="moving" Mode="In" Type="Double" />
+      <Parameter Name="turning" Mode="In" Type="Double" />
+      <Parameter Name="lightChanging" Mode="In" Type="Double" />
+      <Parameter Name="dark" Mode="In" Type="Double" />
+      <Parameter Name="accel" Mode="In" Type="Double" />
+      <Parameter Name="status" Mode="In" Type="Double" />
+      <Parameter Name="screenOn" Mode="In" Type="Double" />
+      <Parameter Name="earPlug" Mode="In" Type="Double" />
+      <Parameter Name="sound" Mode="In" Type="Double" />
+      <Parameter Name="activity" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Pastes" EntityType="ContosoUniversityDataModel.Paste" />
   </EntityContainer>
   <EntityType Name="Alert">
     <Key>
@@ -129,5 +155,33 @@
     <Property Name="Marker" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="TimeRecord" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="LabeledAction" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Paste">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="light" Type="Double" />
+    <Property Name="xAcce" Type="Double" />
+    <Property Name="yAcce" Type="Double" />
+    <Property Name="zAcce" Type="Double" />
+    <Property Name="angle" Type="Double" />
+    <Property Name="azimuth" Type="Double" />
+    <Property Name="pitch" Type="Double" />
+    <Property Name="roll" Type="Double" />
+    <Property Name="latitude" Type="Double" />
+    <Property Name="longitude" Type="Double" />
+    <Property Name="altitude" Type="Double" />
+    <Property Name="hour" Type="Double" />
+    <Property Name="moving" Type="Double" />
+    <Property Name="turning" Type="Double" />
+    <Property Name="lightChanging" Type="Double" />
+    <Property Name="dark" Type="Double" />
+    <Property Name="accel" Type="Double" />
+    <Property Name="status" Type="Double" />
+    <Property Name="screenOn" Type="Double" />
+    <Property Name="earPlug" Type="Double" />
+    <Property Name="sound" Type="Double" />
+    <Property Name="activity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

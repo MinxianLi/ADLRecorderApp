@@ -89,5 +89,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CopyPaste" FunctionName="ContosoUniversityDataModel.Store.CopyPaste" />
+    <EntitySetMapping Name="Pastes">
+      <EntityTypeMapping TypeName="ContosoUniversityDataModel.Paste">
+        <MappingFragment StoreEntitySet="Paste">
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="sound" ColumnName="sound" />
+          <ScalarProperty Name="earPlug" ColumnName="earPlug" />
+          <ScalarProperty Name="screenOn" ColumnName="screenOn" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="accel" ColumnName="accel" />
+          <ScalarProperty Name="dark" ColumnName="dark" />
+          <ScalarProperty Name="lightChanging" ColumnName="lightChanging" />
+          <ScalarProperty Name="turning" ColumnName="turning" />
+          <ScalarProperty Name="moving" ColumnName="moving" />
+          <ScalarProperty Name="hour" ColumnName="hour" />
+          <ScalarProperty Name="altitude" ColumnName="altitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="roll" ColumnName="roll" />
+          <ScalarProperty Name="pitch" ColumnName="pitch" />
+          <ScalarProperty Name="azimuth" ColumnName="azimuth" />
+          <ScalarProperty Name="angle" ColumnName="angle" />
+          <ScalarProperty Name="zAcce" ColumnName="zAcce" />
+          <ScalarProperty Name="yAcce" ColumnName="yAcce" />
+          <ScalarProperty Name="xAcce" ColumnName="xAcce" />
+          <ScalarProperty Name="light" ColumnName="light" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

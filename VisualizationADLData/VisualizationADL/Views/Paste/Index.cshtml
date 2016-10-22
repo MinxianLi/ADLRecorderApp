@@ -1,0 +1,246 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+
+@(Html.Kendo().Grid<ContosoSite.Models.Paste>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id);
+            columns.Bound(c => c.light);
+            columns.Bound(c => c.xAcce);
+            columns.Bound(c => c.yAcce);
+            columns.Bound(c => c.zAcce);
+            columns.Bound(c => c.angle);
+            columns.Bound(c => c.azimuth);
+            columns.Bound(c => c.pitch);
+            columns.Bound(c => c.roll);
+            columns.Bound(c => c.latitude);
+            columns.Bound(c => c.longitude);
+            columns.Bound(c => c.altitude);
+            columns.Bound(c => c.hour);
+            columns.Bound(c => c.moving);
+            columns.Bound(c => c.turning);
+            columns.Bound(c => c.lightChanging);
+            columns.Bound(c => c.dark);
+            columns.Bound(c => c.accel);
+            columns.Bound(c => c.status);
+            columns.Bound(c => c.screenOn);
+            columns.Bound(c => c.earPlug);
+            columns.Bound(c => c.sound);
+            columns.Bound(c => c.activity);
+
+            //columns.Command(command => { command.Edit(); }).Width(250);
+            //columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+        })
+        //.ToolBar(toolbar => { toolbar.Create(); toolbar.Excel(); })
+        .ToolBar(toolbar => { toolbar.Excel(); })
+        .Editable(editable => editable.Mode(GridEditMode.InLine))
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Excel(excel => excel
+            .FileName("Kendo UI Grid Export.xlsx")
+            .Filterable(true)
+            .ProxyURL(Url.Action("Excel_Export_Save", "Activities"))
+        )
+        .Pageable(pageable => pageable
+            .Input(true)
+            .Numeric(false)
+            .Refresh(true)
+            .Refresh(true)
+            .PreviousNext(true)
+            .Info(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Model(model =>
+            {
+                model.Id(p => p.Id);
+                //model.Field(p => p.ResultID).Editable(false);
+                //model.Field(p => p.ChosedAction).Editable(false);
+                //model.Field(p => p.TimeRecord).Editable(false);
+            })
+            .Read(read => read.Action("Activity_Read", "Paste"))
+            //.Create(update => update.Action("Create", "SPReader"))
+            .Update(update => update.Action("Update", "Activities"))
+            .PageSize(10)
+        )
+)
+
+<style>
+    .customer-photo {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-size: 32px 35px;
+        background-position: center center;
+        vertical-align: middle;
+        line-height: 32px;
+        box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+        margin-left: 5px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>
+
+
+@*<style>
+        .k-grid table tr:hover td {
+    background :#8b0000 !important;
+    /*background :rgb(107, 188, 242) !important;*/
+    cursor: pointer !important;
+    color: white;
+    }
+    </style>*@
+
+@*#8b0000*@
+
+
+<style>
+    html .k-grid tr:hover {
+        /*background: #7ea700;*/
+        color: black;
+    }
+
+    html .k-grid .k-header k-link {
+        text-align: center;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            //  debugger;
+            var grid = $("#grid").data("kendoGrid");
+            $("#grid")
+            .attr('tabindex', '0')
+            .on('focusin', function (e) {
+                // get the grid position
+                var offset = $(this).offset();
+                // crete a textarea element which will act as a clipboard
+                var textarea = $("<textarea>");
+                // position the textarea on top of the grid and make it transparent
+                textarea.css({
+                    position: 'absolute',
+                    opacity: 0,
+                    top: offset.top,
+                    left: offset.left,
+                    border: 'none',
+                    width: $(this).width(),
+                    height: $(this).height()
+                })
+                .appendTo('body')
+                .on('paste', function () {
+                    // handle the paste event
+                    setTimeout(function () {
+                        // the the pasted content
+                        var value = $.trim(textarea.val());
+                        // get instance to the grid
+                        var grid = $("#grid").data("kendoGrid");
+                        // get the pasted rows - split the text by new line
+                        var rows = value.split('\n');
+
+                        var data = [];
+
+
+                        for (var i = 0; i < rows.length; i++) {
+                            // get the cells - split by tab
+                            var cells = rows[i].split('\t');
+                            var cell0 = cells[0];
+                            var cell1 = cells[1];
+                            var cell2 = cells[2];
+                            var cell3 = cells[3];
+                            var cell4 = cells[4];
+                            var cell5 = cells[5];
+                            var cell6 = cells[6];
+                            var cell7 = cells[7];
+                            var cell8 = cells[8];
+                            var cell9 = cells[9];
+                            var cell10 = cells[10];
+                            var cell11 = cells[11];
+                            var cell12 = cells[12];
+                            var cell13 = cells[13];
+                            var cell14 = cells[14];
+                            var cell15 = cells[15];
+                            var cell16 = cells[16];
+                            var cell17 = cells[17];
+                            var cell18 = cells[18];
+                            var cell19 = cells[19];
+                            var cell20 = cells[20];
+                            var cell21 = cells[21];
+                            var cell22 = cells[22];
+
+                            //if (cells.length != 7) {
+                            //    alert("Error at row " + i + ". Paste data must be in format Part Number, Hang, Carrier, Name, Qnty/Tier, Number of Holes, Notes");
+                            //    return;
+                            //}
+
+                            // add a new item in the grid
+                            //grid.dataSource.add({
+                            //    Identifier: cells[0],
+                            //    HangConfigurationPath: cells[1],
+                            //    CarrierConfig: cells[2],
+                            //    Name: cells[3],
+                            //    Quantity: cells[4],
+                            //    RequiredHoles: cells[5],
+                            //    Notes: cells[6]
+                            //});
+                            
+                            $.ajax({
+                                type: "POST",
+                                url: "/Paste/Copy",
+                                data: { Id: cell0, light: cell1, xAcce: cell2, yAcce: cell3, zAcce: cell4, angle: cell5, azimuth: cell6, pitch: cell7, roll: cell8, latitude: cell9, longtitude: cell10, altitude: cell11, hour: cell12, moving: cell13, turning: cell14, lightChanging: cell15, dark: cell16, accel: cell17, status: cell18, screenOn: cell19, earPlug: cell20, sound: cell21, activity: cell22 }
+                                //success: callbackmethod(),
+                                //dataType: dataType
+                            });
+
+
+
+                        }
+
+
+
+
+                    });
+                }).on('focusout', function () {
+                    // remove the textarea when it loses focus
+                    $(this).remove();
+                });
+                // focus the textarea
+                setTimeout(function () {
+                    textarea.focus();
+                });
+            });
+        });
+</script>
+
+
+
+<script>
+    $(function () {
+        $("#grid").data("kendoGrid").dataSource.read();
+        $("#grid").data("kendoGrid").refresh();
+    })
+</script>
