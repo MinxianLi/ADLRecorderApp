@@ -2,12 +2,13 @@
 
 
 	app.controller("TaskCtrl", function($scope, $mdDialog, $mdDialog,$http,$rootScope) {
-        $scope.todos =[];
+         
 	    $rootScope.editItem = {};
-		var imagePath = 'https://material.angularjs.org/latest/img/list/60.jpeg?0';
 		$scope.getTodos = function() {
 			$http.get('/todos').success(function(data) {
+					$scope.todos=[];
 				 angular.forEach(data, function(value, key){
+
 				 	 var item = {
 				title: value.title,
 				description: value.description,
@@ -15,15 +16,13 @@
 				done: value.done
 			};
                     $scope.todos.push(item);
-				 });
-			 
+				 });		 
 			});
 		}
 		 $scope.todo = {
          due: new Date()
          };
         $scope.taskdue = new Date($scope.todo.due);
-
 
 		$scope.editIndex = 0;
 
@@ -43,42 +42,31 @@
 					due: '',
 					done: false
 				};
-				return $scope.getTodos();
-			 
+				return $scope.getTodos();	 
 		}); 
-
-
 
 		};
 
 		$scope.removeItem = function(index) {
 			$scope.todos.splice(index, 1);
-
 		};
 
 		$scope.editItem = function(index, event) {
 			$scope.editIndex = index;
 			$rootScope.editItem = $scope.todos[index];
 			$scope.showAdvanced(event);
-	        //$scope.updateLocal();
 	    };
 	    $scope.updateDone = function(index){
-
 	    	$scope.todos[index].done = true;
-
-	    	
 	    }
 	    $scope.updateNotDone = function(index){
-
 	    	$scope.todos[index].done = false;
-
-	    	
 	    }
 	    $scope.showAdvanced = function(ev) {
 
 	    	$mdDialog.show({
 	    		controller: DialogController,
-	    		template:  '<md-dialog aria-label="Edit Task">'+
+	    		template:  '<md-dialog aria-label="Edit Task" flex="percentage">'+
 	    		' <div  layout-gt-sm="row">'+
                 ' <md-input-container class="md-block" flex-gt-sm=""> '+
                 '<label>Title</label>'+
@@ -86,35 +74,30 @@
                  ' </md-input-container>'+
                 ' <md-input-container class="md-block" flex-gt-sm="">'+
                 '  <label>Description</label>'+
-                ' <input ng-model="editItem.description" type="email">'+
+                ' <input ng-model="editItem.description" type="">'+
                 ' </md-input-container>'+
                 '    </div>'+
                 '<div  layout-gt-sm="row">'+
                 ' <md-input-container class="md-block" flex-gt-sm="">'+
                 '  <label>Due date</label>'+
+				' <br />'+
                 '  <md-datepicker ng-model="editItem.due"></md-datepicker>'+
                 '</md-input-container>'+
                 ' </div>'+
-                '  <md-button class="md-raised md-primary" ng-click="Update()">Edit</md-button>'+
-                '</md-dialog>'
-
-	    		,
+                '  <md-button class="md-raised md-primary" ng-click="Update()">Update</md-button>'+
+                '</md-dialog>',
 	    		targetEvent: ev,
 	    	})
 	    	.then(function() {
 	    		console.log('todos:' + JSON.stringify($scope.todos));
 	    		$scope.todos[$scope.editIndex].description =  $rootScope.editItem.description;
 	    		$scope.todos[$scope.editIndex].title = $rootScope.editItem.title;
-	    		$scope.todos[$scope.editIndex].due = $rootScope.editItem.due;
-	    		 
-	    	}, function() {
-	                //$scope.alert = 'You cancelled the dialog.';
-	            });
+	    		$scope.todos[$scope.editIndex].due = $rootScope.editItem.due;		 
+	    	});
 	    };
 
 	    
 	    $scope.updateLocal = function(items) {
-	        //$localStorage.itemList = "[]";
 	        $localStorage.itemList = JSON.stringify(items);
 	    };
 	});
