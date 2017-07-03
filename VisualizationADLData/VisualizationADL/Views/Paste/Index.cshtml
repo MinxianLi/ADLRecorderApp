@@ -1,12 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
-
-
 
 @(Html.Kendo().Grid<ContosoSite.Models.Paste>()
         .Name("grid")
@@ -65,9 +62,6 @@
             .Model(model =>
             {
                 model.Id(p => p.Id);
-                //model.Field(p => p.ResultID).Editable(false);
-                //model.Field(p => p.ChosedAction).Editable(false);
-                //model.Field(p => p.TimeRecord).Editable(false);
             })
             .Read(read => read.Action("Activity_Read", "Paste"))
             //.Create(update => update.Action("Create", "SPReader"))
@@ -98,19 +92,6 @@
     }
 </style>
 
-
-@*<style>
-        .k-grid table tr:hover td {
-    background :#8b0000 !important;
-    /*background :rgb(107, 188, 242) !important;*/
-    cursor: pointer !important;
-    color: white;
-    }
-    </style>*@
-
-@*#8b0000*@
-
-
 <style>
     html .k-grid tr:hover {
         /*background: #7ea700;*/
@@ -121,14 +102,6 @@
         text-align: center;
     }
 </style>
-
-
-
-
-
-
-
-
 
 <script type="text/javascript">
         $(document).ready(function () {
@@ -164,7 +137,6 @@
 
                         var data = [];
 
-
                         for (var i = 0; i < rows.length; i++) {
                             // get the cells - split by tab
                             var cells = rows[i].split('\t');
@@ -191,22 +163,6 @@
                             var cell20 = cells[20];
                             var cell21 = cells[21];
                             var cell22 = cells[22];
-
-                            //if (cells.length != 7) {
-                            //    alert("Error at row " + i + ". Paste data must be in format Part Number, Hang, Carrier, Name, Qnty/Tier, Number of Holes, Notes");
-                            //    return;
-                            //}
-
-                            // add a new item in the grid
-                            //grid.dataSource.add({
-                            //    Identifier: cells[0],
-                            //    HangConfigurationPath: cells[1],
-                            //    CarrierConfig: cells[2],
-                            //    Name: cells[3],
-                            //    Quantity: cells[4],
-                            //    RequiredHoles: cells[5],
-                            //    Notes: cells[6]
-                            //});
                             
                             $.ajax({
                                 type: "POST",
@@ -215,14 +171,7 @@
                                 //success: callbackmethod(),
                                 //dataType: dataType
                             });
-
-
-
                         }
-
-
-
-
                     });
                 }).on('focusout', function () {
                     // remove the textarea when it loses focus
@@ -235,8 +184,6 @@
             });
         });
 </script>
-
-
 
 <script>
     $(function () {
